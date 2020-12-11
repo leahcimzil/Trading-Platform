@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TradingPlatfrom-Frontend"
+    }
+  },
+  "defaultProject": "TradingPlatfrom-Frontend",
+  "cli": {
+    "analytics": "a0864534-2555-4515-86f3-e1c84cc39ef2"
+  }
 }
