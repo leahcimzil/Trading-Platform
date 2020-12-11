@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,9 +91,13 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         },
         "lint": {
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TradingPlatfrom-Frontend"
+    }
+  },
+  "defaultProject": "TradingPlatfrom-Frontend",
+  "cli": {
+    "analytics": "a0864534-2555-4515-86f3-e1c84cc39ef2"
+  }
 }
