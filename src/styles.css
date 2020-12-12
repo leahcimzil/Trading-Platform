@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: gilroy;
-    src: url(assets/fonts/Gilroy-Regular.otf) format("opentype");
+    src: url(assets/fonts/Gilroy-Semibold.otf) format("opentype");
   }
 
 
@@ -13,4 +13,5 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
  }
