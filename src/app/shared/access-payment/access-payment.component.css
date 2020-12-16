@@ -1,0 +1,330 @@
+.logo h3 {
+    font-family: 'gilroy', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;  
+}
+
+
+.page-header h2 {
+    font-weight: 900;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 17px;
+}
+
+.card {
+    background-color: #ffffff !important;
+    border-radius: 7px !important;
+}
+
+.card-body h3 {
+    font-weight: 600 !important;
+    color: #2CD67C;
+}
+
+.card-body p {
+    font-size: 13px;
+    font-weight: 500 !important;
+}
+
+h6 {
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+
+button {
+    background-color: #312085;
+    color: #FFFFFF;
+    font-size: 14px;
+    width: 110px;
+ 
+}
+
+.skip {
+    font-size: 14px;
+    color: #312085;
+    font-weight: 500 !important;
+    margin-bottom: 20px;
+}
+
+.container-fluid {
+    overflow-x: hidden !important;
+}
+
+@media screen and (max-width: 360px) {
+    .logo h3 {
+        font-family: 'gilroy', sans-serif;
+        text-transform: uppercase;
+        font-weight: 900; 
+        text-align: center !important; 
+        margin-top: 10px !important;
+    }
+    
+.page-header h2 {
+    font-weight: 500;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 14px;
+}
+
+    .page-body{
+        display: grid !important ;
+        grid-template-columns: 120% !important;
+        overflow-x: hidden !important;
+    }
+
+    .card {
+           width: 10px !important;
+           margin-left: -130px !important;
+    }
+
+    .card-body{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        /* width: 10px; */
+        /* padding-top: 20px; */
+    }
+
+    .card-body div p, .card-body div i {
+        display: none;
+    }
+
+    .col-3{
+        margin-bottom: 10px;
+    }
+
+    .header h3, .header h6 {
+        text-align: left !important;
+        font-size: 12px;
+    }
+   
+ }
+ 
+
+@media screen and (max-width: 480px) {
+    .logo h3 {
+        font-family: 'gilroy', sans-serif;
+        text-transform: uppercase;
+        font-weight: 900; 
+        text-align: center !important; 
+        margin-top: 10px !important;
+    }
+    
+.page-header h2 {
+    font-weight: 500;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 14px;
+}
+
+    .page-body{
+        display: grid !important ;
+        grid-template-columns: 115% !important;
+        overflow-x: hidden !important;
+    }
+
+    .card {
+           width: 20px !important;
+           margin-left: -130px !important;
+    }
+
+    .card-body{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        /* width: 20px; */
+        /* padding-top: 20px; */
+    }
+
+    .card-body div p, .card-body div i {
+        display: none;
+    }
+
+    .col-3{
+        margin-bottom: 10px;
+    }
+
+    .header h3, .header h6 {
+        text-align: left !important;
+    }
+   
+ }
+ 
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    .logo h3 {
+        font-family: 'gilroy', sans-serif;
+        text-transform: uppercase;
+        font-weight: 900; 
+        text-align: center !important; 
+        margin-top: 10px !important;
+    }
+    
+.page-header h2 {
+    font-weight: 500;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 14px;
+}
+
+    .page-body{
+        display: grid !important ;
+        grid-template-columns: 100%;
+    }
+
+    .card {
+           width: 420px !important;
+           margin-left: -90px !important;
+    }
+
+    .card-body{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        /* padding-top: 20px; */
+    }
+
+    .card-body div p, .card-body div i {
+        display: none;
+    }
+
+    .col-3{
+        margin-bottom: 10px;
+    }
+
+    .header h3, .header h6 {
+        text-align: left !important;
+    }
+  
+ }
+
+
+ 
+ 
+ /* Medium devices (landscape tablets, 768px and down) */
+ @media only screen and (max-width: 766px) {
+ 
+    .logo h3 {
+        font-family: 'gilroy', sans-serif;
+        text-transform: uppercase;
+        font-weight: 900; 
+        text-align: center !important; 
+        margin-top: 10px !important;
+    }
+    
+.page-header h2 {
+    font-weight: 500;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 14px;
+}
+
+    .page-body{
+        display: grid !important ;
+        grid-template-columns: 100%;
+        margin-left: -90px !important;
+    }
+
+    .card {
+           width: 420px !important;
+           margin-left: -80px !important;
+    }
+
+    .card-body{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        /* padding-top: 20px; */
+    }
+
+    .card-body div p, .card-body div i {
+        display: none;
+    }
+
+    .col-3{
+        margin-bottom: 10px;
+    }
+
+    .header h3, .header h6 {
+        text-align: left !important;
+    }
+  
+ }
+ 
+ @media only screen and (max-width: 991px) {
+    .logo h3 {
+        font-family: 'gilroy', sans-serif;
+        text-transform: uppercase;
+        font-weight: 900; 
+        text-align: center !important; 
+        margin-top: 10px !important;
+    }
+    
+.page-header h2 {
+    font-weight: 500;
+}
+
+.page-header p {
+    color: #495064;
+    font-size: 14px;
+}
+
+    .page-body{
+        display: grid !important ;
+        grid-template-columns: 100%;
+        /* margin-left: -10px !important; */
+    }
+
+    .card {
+           width: 420px !important;
+           margin-left: 130px !important;
+    }
+
+    .card-body{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        /* padding-top: 20px; */
+    }
+
+    .card-body div p, .card-body div i {
+        display: none;
+    }
+
+    .col-3{
+        margin-bottom: 10px;
+    }
+
+    .header h3, .header h6 {
+        text-align: left !important;
+    }
+  
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and down) */
+ @media only screen and (max-width: 992px) {
+ 
+   
+ }
+ 
+ @media only screen and (max-width: 1109px) {
+  
+     
+ }
+ 
+ @media only screen and (max-width: 1264px) {
+
+     
+ }
