@@ -6,24 +6,34 @@
               <h5 >Logo</h5>
               <h2>Log into your account</h2>
               <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
-              </div>  
+              </div>
               <div class="mx-5 ">
-               <form >
-                    
+               <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
                      <div class="form-group my-4">
                          <label for="email" class="my-2">email</label>
-                         <input type="email" class="form-control form-control-lg" id="email" >
-                       
+                         <input type="email" class="form-control form-control-lg" id="email"
+                                [class.border-danger]="loginForm.get('email').invalid && loginForm.get('email').touched"
+                                formControlName="email">
+                       <div class="text-danger" *ngIf = "loginForm.get('email').invalid && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+                         <small *ngIf = "loginForm.get('email').errors?.required"> Email required</small>
+<!--                         <small *ngIf = "loginForm.get('email').errors?.pattern"> Please provide a valid email address</small>-->
+                       </div>
                        </div>
                        <div class="form-group my-4">
                          <label for="password" class="my-2">Password</label>
-                         <input type="password" class="form-control form-control-lg" id="password" >
+                         <input type="password" class="form-control form-control-lg" id="password"
+                                [class.border-danger]="loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)"
+                                formControlName="password">
                          <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                         <div class="text-danger" *ngIf = "loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)">
+                           <small *ngIf = "loginForm.get('password').errors?.required"> Password required</small>
+                       </div>
                        </div>
 
-                    
+
                        <div class=" my-3">
-                       <button type="submit" class="btn btn-lg d-flex justify-content-center p-3">Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span class="mt-0 ml-0"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-lg d-flex justify-content-center p-3">Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span class="mt-0 ml-0"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
                    </div>
                      </form>
                      <div  class=" my-3">
@@ -41,7 +51,7 @@
          </div>
              <div class="first-column-body mt-5">
                 <div class="first-column-body-word">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet pellentesque metus quis venenatis. 
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet pellentesque metus quis venenatis.
                 </div>
                 <div class="first-column-body-image mt-5">
                  <img src="/assets/images/signin-image.jpg" class="center" width="370px" height="370px" alt="image"/>

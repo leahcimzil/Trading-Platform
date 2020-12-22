@@ -12,6 +12,10 @@
     font-size: 20px;
   }
 
+  .phn {
+    margin-top: -20px;
+  }
+
   .first-column-body{
     margin-top: 60px
 }
@@ -62,7 +66,7 @@
       color: #6558A3;
   }
 
-  input {
+  input, #phoneNumber {
       outline: #83838A;
   }
 
@@ -83,9 +87,8 @@
 
 .second-column-header h4 {
     display: none;
-    
-}
 
+}
 
 
 @media screen and (max-width: 480px) {
@@ -114,7 +117,7 @@ label {
 .second-column-header h2, .second-column-header h5 {
     color: #ffffff;
     font-size: 14px ;
-   
+
 }
 
 .second-column-header h4 {
@@ -132,9 +135,14 @@ input {
     margin-bottom: -20px !important;
 }
 
+ #pass {
+    margin-top: -40px !important;
+ }
+
 #first, #email {
     margin-bottom: 20px;
 }
+
 
 .field-icon {
     float: right;
@@ -155,7 +163,7 @@ input {
     color: #ffffff;
     font-size: 15px ;
 }
-  
+
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -163,12 +171,12 @@ input {
     .first-column-body-image, .first-column-body, .first-column-header, .second-column-header p{
         display: none;
     }
- 
+
     .first-column{
         width: 600px;
         z-index: -1;
     }
- 
+
     .second-column{
      width: 600px;
      font-size: 15px;
@@ -178,35 +186,40 @@ input {
      font-weight: 600;
      font-size: 11px;
      color: #ffffff;
- 
+
    }
- 
- 
+
+
  .second-column-header h2, .second-column-header h5 {
      color: #ffffff;
      font-size: 14px ;
-    
+
  }
- 
+
  .second-column-header h4 {
      display: block;
      color: #ffffff;
      font-size: 23px ;
      margin-bottom: 10px ;
  }
- 
+
  .second-column-header {
      margin-bottom: -15px;
  }
- 
- input {
+
+ input{
      margin-bottom: -20px !important;
  }
- 
+
+ #pass {
+    margin-top: -40px !important;
+ }
+
+
  #first, #email {
      margin-bottom: 20px;
  }
- 
+
  .field-icon {
      float: right;
      margin-right: 25px;
@@ -216,17 +229,17 @@ input {
      cursor: pointer;
      color: #83838A;
  }
- 
+
  .form-check p {
      color: #ffffff;
      font-size: 15px ;
  }
- 
+
  .foot {
      color: #ffffff;
      font-size: 15px ;
  }
- 
+
 }
 
 
@@ -236,12 +249,12 @@ input {
     .first-column-body-image, .first-column-body, .first-column-header, .second-column-header p{
         display: none;
     }
- 
+
     .first-column{
         min-width: 900px;
         z-index: -1;
     }
- 
+
     .second-column{
     width: 800px;
      font-size: 15px;
@@ -251,35 +264,40 @@ input {
      font-weight: 700;
      font-size: 11px;
      color: #ffffff;
- 
+
    }
- 
- 
+
+
  .second-column-header h2, .second-column-header h5 {
      color: #ffffff;
      font-size: 14px ;
-    
+
  }
- 
+
  .second-column-header h4 {
      display: block;
      color: #ffffff;
      font-size: 23px ;
      margin-bottom: 10px ;
  }
- 
+
  .second-column-header {
      margin-bottom: -15px;
  }
- 
- input {
+
+ input{
      margin-bottom: -20px !important;
  }
- 
+
+ #pass {
+    margin-top: -40px !important;
+ }
+
+
  #first, #email {
      margin-bottom: 20px;
  }
- 
+
  .field-icon {
      float: right;
      margin-right: 25px;
@@ -289,31 +307,31 @@ input {
      cursor: pointer;
      color: #83838A;
  }
- 
+
  .form-check p {
      color: #ffffff;
      font-size: 15px ;
  }
- 
+
  .foot {
      color: #ffffff;
      font-size: 15px ;
  }
- 
- 
+
+
 }
 
 @media only screen and (max-width: 991px) {
- 
+
     .first-column-body-image, .first-column-body, .first-column-header, .second-column-header p{
         display: none;
     }
- 
+
     .first-column{
         min-width: 1000px;
         z-index: -1;
     }
- 
+
     .second-column{
      width: 1000px;
      font-size: 15px;
@@ -323,35 +341,40 @@ input {
      font-weight: 900;
      font-size: 11px;
      color: #ffffff;
- 
+
    }
- 
- 
+
+
  .second-column-header h2, .second-column-header h5 {
      color: #ffffff;
      font-size: 14px ;
-    
+
  }
- 
+
  .second-column-header h4 {
      display: block;
      color: #ffffff;
      font-size: 23px ;
      margin-bottom: 10px ;
  }
- 
+
  .second-column-header {
      margin-bottom: 70px;
  }
- 
+
  input {
      margin-bottom: -20px !important;
  }
- 
+
+ #pass {
+    margin-top: -40px !important;
+ }
+
+
  #first, #email {
      margin-bottom: 20px;
  }
- 
+
  .field-icon {
      float: right;
      margin-right: 25px;
@@ -361,12 +384,12 @@ input {
      cursor: pointer;
      color: #83838A;
  }
- 
+
  .form-check p {
      color: #ffffff;
      font-size: 15px ;
  }
- 
+
  .foot {
      color: #ffffff;
      font-size: 15px ;
@@ -383,7 +406,7 @@ input {
         text-align: left;
         margin-left: -30px;
       }
-    
+
       .center {
         display: block;
         margin-right: auto;
@@ -399,13 +422,13 @@ input {
         text-align: left;
         margin-left: -13px;
       }
-    
+
       .center {
         display: block;
         margin-right: auto;
         width: 50%;
       }
-    
+
 }
 
 @media only screen and (max-width: 1264px) {
@@ -415,11 +438,11 @@ input {
         /* margin-bottom: 140px !important; */
         text-align: left;
       }
-    
+
       .center {
         display: block;
         margin-right: auto;
         width: 50%;
       }
-    
+
 }

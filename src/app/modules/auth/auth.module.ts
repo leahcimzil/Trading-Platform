@@ -5,6 +5,9 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { RouterModule, Routes } from '@angular/router';
 import { EmailVerificationComponent } from './email-verification/email-verification.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const authRoutes: Routes = [
   // *****************  auth home which includes the auth login *******************************
@@ -46,7 +49,10 @@ const authRoutes: Routes = [
   declarations: [AuthComponent, AuthLoginComponent, AuthSignupComponent, EmailVerificationComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(authRoutes)
+    RouterModule.forChild(authRoutes),
+    NgxIntlTelInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule]
 })

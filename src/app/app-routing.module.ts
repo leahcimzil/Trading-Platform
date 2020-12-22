@@ -1,8 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccessPaymentComponent } from './shared/access-payment/access-payment.component';
+import {HomeComponent} from './pages/home/home.component';
 
 const routes: Routes = [
+
+  // ****************** home page *****************************************
+  {
+    path: '',
+    component: HomeComponent
+  },
+
+  // ****************** home page *****************************************
 
   //  ***************** auth routing module *******************************
   {
