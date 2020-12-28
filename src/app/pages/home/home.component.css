@@ -4,12 +4,237 @@
   color: #ffffff !important;
 
 }
-.nav-item a, .navbar-brand{
-  color: #ffffff !important;
-  font-size: 17px;
+
+
+
+.first-row {
+  margin-top: 200px !important;
 }
 
-.navbar-toggler {
-  color: white;
+.first-row-word h5{
+  font-size: 34px;
 }
+
+.first-row-word h2{
+  font-size: 49px;
+  font-weight: 600;
+}
+
+.first-row-word-button button {
+  background: #312085;
+  color: #ffffff;
+  width: 280px !important;
+  padding: 13px !important;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.carousel-row {
+background: #ffffff;
+height: 46px;
+margin-top: 12em;
+}
+
+.second-row{
+  margin-top: 200px !important;
+}
+
+.second-row-word{
+  margin-top: 137.5px !important;
+}
+
+.second-row-word h2{
+  font-size: 38px !important;
+  font-weight: 600 !important;
+}
+
+.second-row-word-button button {
+   border: 2px #312085 solid ;
+  color: #ffffff;
+  width: 230px !important;
+  padding: 13px !important;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.third-row{
+  margin-top: 200px !important;
+}
+
+.third-row-word h2{
+  font-size: 45px !important;
+  font-weight: 600 !important;
+}
+
+.fourth-row {
+  margin-top: 100px !important;
+}
+
+.fourth-circle-widget{
+  height: 100px !important;
+  width: 100px !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  margin: 0 auto !important;
+}
+
+.fourth-row-word-button button {
+  background: #312085;
+  color: #ffffff;
+  width: 280px !important;
+  padding: 13px !important;
+  font-size: larger;
+  font-weight: 600;
+}
+
+
+.fourth-row-word-first-row-body h3 {
+font-size: 16px !important;
+font-weight: 600;
+}
+
+.fourth-row-word-first-row-body p{
+  font-size: 12px !important;
+}
+
+.fifth-row{
+  margin-top: 200px !important;
+}
+
+.fifth-row-header h2{
+  font-size: 45px !important;
+  font-weight: 600 !important;
+}
+
+.page-body {
+  display: flex;
+  justify-content: center;
+
+}
+
+.col-3 {
+  max-width: 290px !important;
+}
+
+.card {
+    background-color: #ffffff !important;
+    border-radius: 7px !important;
+    color: black;
+
+}
+
+.card-body h3 {
+    font-weight: 600 !important;
+    color: #2CD67C;
+}
+
+.card-body p {
+    font-size: 13px;
+    font-weight: 500 !important;
+}
+
+h6 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.invest button {
+    background-color: #312085;
+    color: #FFFFFF;
+    font-size: 14px;
+    width: 110px;
+
+}
+
+.sixth-row {
+  margin-top: 200px !important;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.sixth-row-header h2 {
+  font-size: 45px !important;
+  font-weight: 600 !important;
+  color: black !important;
+}
+
+.sixth-row-word {
+  color: black !important;
+}
+
+.sixth-row-word h3 {
+  font-weight: 600;
+  font-size: 33px;
+}
+
+.sixth-row-word-button button {
+  color: black;
+  border: 1px solid #312085;
+  font-size: 16px;
+  font-weight: 600;
+  width: 160px;
+}
+
+.seven-row {
+  margin-top: 200px !important;
+}
+
+.seven-row-header h2 {
+  font-size: 42px !important;
+  font-weight: 600 !important;
+}
+
+
+.seven-row-body .card {
+  max-width: 300px !important;
+}
+
+.seven-row-body-word h2 {
+  font-size: 25px !important;
+  font-weight: 600 !important;
+}
+
+.seven-row-body-word p {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+.seven-row-button button {
+  background-color: #312085;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600 !important;
+  letter-spacing: 2px;
+  width: 250px;
+}
+
+.eight-row {
+  margin-top: 200px !important;
+}
+
+.eight-row-header h2 {
+  font-size: 34px !important;
+  font-weight: 500 !important;
+}
+
+.eight-row-header p {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+
+.eight-row-body .card {
+  max-width: 250px !important;
+}
+
+.eight-row-body-word p {
+  font-size: 12px;
+  font-weight: 600 !important;
+}
+
+.eight-row-more p {
+  font-size: 13px;
+}
+
 

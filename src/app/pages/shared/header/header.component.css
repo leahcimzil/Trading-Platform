@@ -1,0 +1,58 @@
+/* .logo a {
+  font-size: 20px;
+} */
+.nav-item a, .navbar-brand{
+    color: #ffffff !important;
+    font-size: 17px;
+  }
+  
+  .navbar-toggler {
+    color: white;
+  }
+  
+  .login-btn {
+    border: white 1px solid;
+    /* background: #312085; */
+    font-size: 12px;
+    width: 160px !important;
+    padding: 13px !important;
+    margin-right: 20px !important;
+   }
+  
+  .signin-btn {
+   border: #13136D 1px solid;
+   background: #312085;
+   font-size: 12px;
+   width: 160px !important;
+   padding: 13px !important;
+  }
+
+  .cursor {
+      cursor: pointer !important;
+  }
+  /* ============ only desktop view ============ */
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0; }
+	.navbar .nav-item:hover .nav-link{ color: black !important;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg);}
+}		.dropdown-menu {
+    background-color: white !important;
+    
+}
+.dropdown-menu a {
+    color: black !important;
+    border-bottom: 1px solid gray;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #13136D !important;
+    color: white !important;
+}
+
+.contact {
+    border-bottom: none !important;
+}
+/* ============ desktop view .end// ============ */

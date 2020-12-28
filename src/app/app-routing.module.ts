@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccessPaymentComponent } from './shared/access-payment/access-payment.component';
 import {HomeComponent} from './pages/home/home.component';
+import { TradeComponent } from './pages/trade/trade.component';
 
 const routes: Routes = [
 
@@ -12,6 +13,14 @@ const routes: Routes = [
   },
 
   // ****************** home page *****************************************
+
+  // ****************** trade page *****************************************
+  {
+    path: 'trade',
+    component: TradeComponent
+  },
+
+  // ****************** trade page *****************************************
 
   //  ***************** auth routing module *******************************
   {
