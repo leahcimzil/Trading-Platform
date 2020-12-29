@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { EmailVerificationComponent } from './email-verification/email-verification.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const authRoutes: Routes = [
   // *****************  auth home which includes the auth login *******************************
