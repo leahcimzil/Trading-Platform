@@ -1,0 +1,56 @@
+.first-row-header{
+    margin-top: 150px !important;
+}
+.first-row-header h1 {
+    font-weight: 600;
+    font-size: 100px;
+    text-transform: uppercase;
+}
+
+.first-row-body {
+    margin-top: 50px !important;
+}
+
+
+
+
+.page-body {
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .col-3 {
+    max-width: 290px !important;
+  }
+  
+  .card {
+      background-color: #ffffff !important;
+      border-radius: 7px !important;
+      color: black;
+  
+  }
+  
+  .card-body h3 {
+      font-weight: 600 !important;
+      color: #2CD67C;
+  }
+  
+  .card-body p {
+      font-size: 13px;
+      font-weight: 500 !important;
+  }
+  
+  h6 {
+      font-size: 20px;
+      font-weight: 500;
+  }
+  
+  
+  .invest button {
+      background-color: #312085;
+      color: #FFFFFF;
+      font-size: 14px;
+      width: 110px;
+  
+  }

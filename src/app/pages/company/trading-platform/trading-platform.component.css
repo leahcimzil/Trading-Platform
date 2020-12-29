@@ -1,0 +1,39 @@
+.first-row-header{
+    margin-top: 150px !important;
+}
+.first-row-header h1 {
+    font-weight: 600;
+    font-size: 100px;
+    text-transform: uppercase;
+}
+
+.first-row-body {
+    margin-top: 50px !important;
+}
+
+.first-row-body .card {
+  max-width: 120vh !important;
+}
+
+.card-body p {
+    color: gray !important;
+}
+
+.card-body h6 {
+    color: black !important;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type:circle;
+}
+
+ul li {
+    color: black !important;
+}
+
+.card-body p span{
+    color: gray !important;
+    font-weight: 600;
+    font-size: 15px;
+}

@@ -41,6 +41,10 @@
     background-color: white !important;
     
 }
+
+.navbar .nav-item:active .nav-link{
+    color: black !important;  
+}
 .dropdown-menu a {
     color: black !important;
     border-bottom: 1px solid gray;
@@ -54,5 +58,9 @@
 
 .contact {
     border-bottom: none !important;
+}
+
+.link {
+    color: black !important;
 }
 /* ============ desktop view .end// ============ */
