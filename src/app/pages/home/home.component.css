@@ -237,6 +237,18 @@ h6 {
   font-size: 13px;
 }
 
+.nine-row {
+  margin-top: 200px !important;
+}
+
+
+.nine-row-header h2 {
+  font-size: 34px !important;
+  font-weight: 500 !important;
+}
+
+
+
 /* .ico {
   margin-top: 1.1px !important;
 } */

@@ -25,6 +25,8 @@ import { FundamentalAnalysisComponent } from './pages/analytical-tools/fundament
 import { RealTimeChartComponent } from './pages/analytical-tools/real-time-chart/real-time-chart.component';
 import { TechnicalAnalysisComponent } from './pages/analytical-tools/technical-analysis/technical-analysis.component';
 import { CompanyComponent } from './pages/company/company.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
 
@@ -171,9 +173,22 @@ const routes: Routes = [
   {
     path: 'payment-view',
     component: AccessPaymentComponent
-  }
+  },
 
   // *********************** access payment route ************************
+
+  // **************** privacy policy ********************************
+
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
+  },
+
+  // **************** privacy policy ********************************
+  {
+    path: 'terms-and-conditions',
+    component: TermsConditionsComponent
+  }
 ];
 
 @NgModule({

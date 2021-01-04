@@ -37,7 +37,11 @@ import { DividendCalenderComponent } from './pages/analytical-tools/dividend-cal
 import { FundamentalAnalysisComponent } from './pages/analytical-tools/fundamental-analysis/fundamental-analysis.component';
 import { TechnicalAnalysisComponent } from './pages/analytical-tools/technical-analysis/technical-analysis.component';
 import { HeaderComponent } from './pages/shared/header/header.component';
+import { FooterComponent } from './pages/shared/footer/footer.component';
 import { TradingHoursChangesComponent } from './pages/markets/trading-hours-changes/trading-hours-changes.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+
 
 
 @NgModule({
@@ -68,7 +72,10 @@ import { TradingHoursChangesComponent } from './pages/markets/trading-hours-chan
     FundamentalAnalysisComponent,
     TechnicalAnalysisComponent,
     HeaderComponent,
-    TradingHoursChangesComponent
+    TradingHoursChangesComponent,
+    FooterComponent,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent
   ],
   imports: [
     BrowserModule,
