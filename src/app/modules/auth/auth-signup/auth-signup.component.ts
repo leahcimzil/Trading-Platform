@@ -3,6 +3,7 @@ import { SearchCountryField, TooltipLabel, CountryISO, PhoneNumberFormat } from 
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PasswordStrengthValidator, passwordValidators} from '../../../utils/validators/passwordValidators';
 import {SignupDTO} from '../../../models/auth-model';
+import { AuthService } from 'src/app/services/auth.service';
 declare var $: any;
 @Component({
   selector: 'app-auth-signup',
@@ -18,7 +19,7 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
   CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthService) {
     this.signupForm = this.fb.group({
       first_name: ['', [Validators.required]],
       last_name: ['', [Validators.required]],
@@ -50,6 +51,7 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
   };
 
   console.log(data);
+  this.auth.registerUser(data);
   }
 
 

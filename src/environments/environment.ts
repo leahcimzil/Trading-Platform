@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://trading-fx.herokuapp.com/'
+  url: 'https://trading-fx.herokuapp.com'
 };
 
 /*

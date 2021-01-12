@@ -19,9 +19,7 @@ export class AuthGuard implements CanLoad {
 
     if (!auth && !verify) {
       this.navigate.routeLogin();
-
-
-      return auth;
     }
+    return auth;
   }
 }

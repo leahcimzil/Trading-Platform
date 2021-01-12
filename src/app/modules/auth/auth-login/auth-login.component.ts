@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import $ from 'jquery';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ILoginDTO} from '../../../models/auth-model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-auth-login',
@@ -14,7 +15,7 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthService) {
 
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
@@ -32,6 +33,7 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
       email,
       password
     };
+   this.auth.loginUser(data);
   }
 
   ngOnInit(): void {

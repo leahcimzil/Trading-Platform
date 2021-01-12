@@ -27,6 +27,9 @@ import { TechnicalAnalysisComponent } from './pages/analytical-tools/technical-a
 import { CompanyComponent } from './pages/company/company.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import { VerifyGuard } from './utils/guards/verify-guard';
+import { AuthGuard } from './utils/guards/auth-guard';
+import { UnAuthGuard } from './utils/guards/un-auth-guard';
 
 const routes: Routes = [
 
@@ -159,14 +162,23 @@ const routes: Routes = [
 
   // ****************** analytical page *****************************************
 
-  //  ***************** auth routing module *******************************
+  //  ***************** auth routing and verify module *******************************
   {
     path: 'auth',
+    canLoad: [UnAuthGuard],
     loadChildren: () => import('./modules/auth/auth.module')
                           .then(m => m.AuthModule)
 
   },
-  //  ***************** auth routing module *******************************
+
+  {
+    path: 'verify-email',
+    canLoad: [AuthGuard],
+    loadChildren: () => import('./modules/verify/verify.module')
+                          .then(m => m.VerifyModule)
+
+  },
+  //  ***************** auth routing and verify module *******************************
 
   // *********************** access payment route ************************
 
@@ -188,7 +200,18 @@ const routes: Routes = [
   {
     path: 'terms-and-conditions',
     component: TermsConditionsComponent
-  }
+  },
+
+  // ********************* dashboard **********************************
+
+   {
+     path: 'dashboard',
+     canLoad: [VerifyGuard],
+     loadChildren: () => import('./modules/dashboard/dashboard.module')
+                          .then(m => m.DashboardModule)
+   }
+
+  // ********************* dashboard **********************************
 ];
 
 @NgModule({

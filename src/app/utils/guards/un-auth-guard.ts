@@ -15,7 +15,7 @@ export class UnAuthGuard implements CanLoad {
   canLoad( route: Route, segments: UrlSegment[]): boolean | Observable<boolean> | Promise<boolean> {
     const auth = this.authservice.getAuthenticated();
     if ( auth ) {
-      // this.navigate.routeSellerDashboard();
+      this.navigate.routeDashboard();
 
     }
     return !auth;

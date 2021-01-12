@@ -97,7 +97,7 @@ export class AuthService {
   // =================  Start Login User =====================
 
   loginUser = (data: ILoginDTO) => {
-    return this.http.post<any>(`${this.API_URL}/auth/login`, data).subscribe(
+    return this.http.post<any>(`${this.API_URL}/auth/login/`, data).subscribe(
 
       response => {
         const token = response.token;
@@ -119,7 +119,6 @@ export class AuthService {
           localStorage.setItem('verify', 'false');
           this.getAuthenticatedUpdated.next(true);
           this.saveAuthenticationData(token, userDetails, first_login);
-          this.resendOTP();
           this.navigate.routeVerify();
         }
       },
@@ -133,12 +132,13 @@ export class AuthService {
 
   // ========================= Verify ==========================
   verifyUser = (data: any) => {
-    this.http.post<any>(`${this.API_URL}/auth/verify_account`, data).subscribe(
+    this.http.post<any>(`${this.API_URL}/auth/verify_account/`, data).subscribe(
       response => {
         // console.log('Verified Successfully');
         this.isVerify = true;
         localStorage.setItem('verify', 'true');
         this.getVerifyUpdated.next(true);
+        this.navigate.routeDashboard();
       });
   }
 

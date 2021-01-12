@@ -14,7 +14,11 @@ export class NavigationService {
   }
 
   routeVerify = () => {
-    return this.router.navigate(['/auth/verify-email']);
+    return this.router.navigate(['/verify-email/verify']);
+  }
+
+  routeDashboard = () => {
+    return this.router.navigate(['/dashboard/trade']);
   }
 
 }
