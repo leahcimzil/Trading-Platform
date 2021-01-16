@@ -1,9 +1,25 @@
 .wrapper {
-    position: relative;
-//     margin-left: 350px;
+    // position: relative;
+    margin-left: 40px !important;
+    margin-right: 70px !important;
 }
 
 
 .filters {
-    margin-right: 70px;
+    // margin-right: 70px;
+}
+
+.second-row {
+//     margin: 30px
+margin-top: 66px;
+
+span {
+    font-size: 13px;
+    color: grey;
+}
+
+p {
+    margin-top: 20px;
+    color: #0D0D21 !important;
+}
 }
