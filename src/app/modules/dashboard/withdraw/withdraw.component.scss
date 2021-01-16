@@ -1,0 +1,334 @@
+.container-fluid{
+    background-color: #EFFFFB !important;
+    min-height: 100vh;
+    // margin: 0;
+    // padding: 0;
+  
+  }
+  .mobile{
+    display: none;
+  }
+  .purple-button{
+    background: #4E3995;
+    color: #0AF0DD;
+    border: 1px solid #4E3995 !important;
+    background-image: url('/assets/images/curr.png');
+    background-repeat: no-repeat;
+  
+  
+  }
+  
+  .btn-grey, .btn-grey:focus, .btn-grey:active {
+    background: #D8E6E2;
+    color: #4E3995;
+    border: 1px solid #4E3995 !important;
+    outline: none !important;
+  }
+  .card.usd{
+    border-radius: 16px ;
+    background: #6ED1D8;
+  }
+  .card.ngn{
+    border-radius: 16px ;
+    background: #6ED88C;
+  }
+  .card.brp{
+    border-radius: 16px ;
+    background: #FACC2B;
+  }
+  .card.cad{
+    border-radius: 16px ;
+    background:  #FEA4BA;
+  }
+  .card.eur{
+    border-radius: 16px ;
+    background: #A4B8FE;
+  }
+  .fund_withrawal__text{
+    h3{
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 3.7rem;
+      color: #4E3995;
+    }
+  }
+  
+  .secondary-text{
+    font-size: 1.1rem;
+    font-weight: lighter;
+  }
+  .name_text{
+    color: #4E3995;
+    font-size: 1.3rem;
+    font-weight: bolder;
+  }
+  .withdrawal_button{
+    background: #4E3995;
+    color: #0AF0DD;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 17px;
+  }
+  
+  
+  //------------------------------ mobile view -----------------------------------
+  @media only screen and (max-width: 767px) {
+    .container{
+      // background-color: red !important;
+      background-image: url('/assets/images/left-bg.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+  
+  
+  
+    }
+    .desktop{
+      display: none !important;
+    }
+    .mobile{
+      display: block ;
+      padding-top: 6em !important;
+    }
+    .withdraw{
+      background: #D8E6E2;
+      color: #4E3995;
+      border: 1px solid #4E3995 !important;
+    }
+    .fund{
+      background: #4E3995;
+      color: #0AF0DD;
+      border: 1px solid #4E3995 !important;
+      background-image: url('/assets/images/curr.png');
+      background-repeat: no-repeat;
+    }
+  
+  
+  }
+  .point{
+    cursor: pointer;
+  }
+  
+  
+  // sdfghjklm;,.'/;lkjhgvcfxdzsd
+  .fund_wallet__text h3{
+    color:  #4E3995;
+    font-weight: 10
+    00;
+    text-align: center;
+  }
+  // .x{
+  //   color:  #4E3995 !important;
+  //   margin-left: 10px;
+  // }
+  .last-btn{
+    background-color:  #4E3995 ;
+    color: #0AF0DD;
+  }
+  
+  .RequestCurrency{
+    background-color:#4E3995 ;
+    color: #0AF0DD !important;
+  }
+  .py{
+    padding: 27px 0!important;
+  }
+  .py::placeholder{
+    padding-left: 10px !important;
+  }
+  
+  
+  .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+    cursor: pointer;
+    margin-top: 3px;
+  
+  }
+  
+  .scrollable-menu :hover {
+    background-color: #4E3995;
+    color: aliceblue;
+  }
+  
+  .close {
+    font-size: 30px;
+    color: #4E3995;
+    text-shadow: none;
+  }
+  
+  .modal-open,
+  .modal {
+    padding-right: 0;
+  }
+  
+  .modal-header {
+    border: none;
+    background: none !important;
+  
+    h2 {
+      font-size: 20px;
+      color: #4E3995;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  }
+  
+  .modal-footer {
+    border: none;
+  }
+  
+  label,
+  .title h5 {
+    font-size: 13px;
+  }
+  
+  .form-control, .form-control:active{
+    background: #EDF2F7;
+    border-radius: 3px;
+    border: none !important;
+    outline: none !important;
+    padding: 2.2rem !important;
+  
+    // font-size: 1.5rem;
+  }
+  
+  .dropdown-toggle {
+    text-align: left;
+    // padding-left: 1rem !important;
+    padding: 1.5rem !important;
+    background: #EDF2F7;
+    border-radius: 3px;
+    border: none !important;
+  }
+  
+  .dropdown-toggle::after {
+    float: right;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    // font-size: 25px;
+  }
+  
+  .proceed-btn {
+    border: none;
+    background: #4E3995;
+    color: #0AF0DD;
+    font-size: 16px;
+  }
+  
+  .heading-1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 18px;
+    color: #0A0A0A;
+    padding: 0 0;
+  
+  }
+  .btn-payment-opt{
+    background: #EDF2F7;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 1.2rem 0; 
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4E3995;
+    
+  }
+  
+  
+  .hide{display:none !important}
+  
+  .heading-1-mobile-money{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  
+  color: #4E3995;
+  }
+  
+  .mm-label{
+    font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px !important;
+  // text-align: right;
+  
+  color: #000000;
+  }
+  
+  @media only screen and (max-width : 767px) {
+    //    .card {
+    //     width: 90% !important;
+    //    }
+  }
+  @media only screen and (max-width : 380px) {
+    .dropdown-toggle::after {
+      margin-right: 1rem;
+    }
+  
+    // .btn {
+    //     font-size: 13px;
+    // }
+  
+  }
+  
+  .empty-state {
+    height: 400px;
+    color: #777777;
+    .empty-div {
+      height: 100px;
+      width: 100px;
+      background: #EEEEEE;;
+      margin: 6rem auto 1rem;
+      border-radius: 50px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  
+  //Empty State
+  .element-box{
+    position: relative;
+    top: 5em;
+    // left:em;
+  }
+  .circle{
+    margin: 0 auto;
+    height: 5em;
+    width: 5em;
+    border-radius: 100%;
+    background-color: #EEEEEE;
+  }
+  
+  
+  .card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    .card-header {
+      border: none;
+      background: none;
+    }
+    p {
+      font-size: 18px;
+    }
+    .small {
+      font-size: 12px;
+    }
+  }
+  

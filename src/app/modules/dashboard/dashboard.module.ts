@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { TradeComponent } from '../dashboard/trade/trade.component';
 import { TransactionHistoryComponent } from '../dashboard/transaction-history/transaction-history.component';
 import { AccountComponent } from '../dashboard/account/account.component';
+import { PersonalInfoComponent } from '../dashboard/account/personal-info/personal-info.component';
+import { UploadsComponent } from '../dashboard/account/uploads/uploads.component';
+import { SettingsComponent } from '../dashboard/account/settings/settings.component';
 import { AnalysisComponent } from '../dashboard/analysis/analysis.component';
 import { DepositComponent } from '../dashboard/deposit/deposit.component';
 import { WithdrawComponent } from '../dashboard/withdraw/withdraw.component';
@@ -16,40 +19,53 @@ import { UnAuthGuard } from 'src/app/utils/guards/un-auth-guard';
 import { Interceptor } from 'src/app/utils/interceptor/auth-interceptor';
 import { ErrorInterceptor } from 'src/app/utils/interceptor/error-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
-
-export const dashboardRoutes: Routes = [{
-  path: '',
-  component: DashboardComponent,
-  children: [
-    {
-      path: 'trade',
-      component: TradeComponent
-    },
-    {
-      path: 'transaction-history',
-      component: TransactionHistoryComponent
-    },
-    {
+export const dashboardRoutes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'trade',
+        component: TradeComponent,
+      },
+      {
+        path: 'transaction-history',
+        component: TransactionHistoryComponent,
+      },
+      {
         path: 'account',
-        component: AccountComponent
-    },
-    {
-      path: 'analysis',
-      component: AnalysisComponent
-    },
-    {
-      path: 'deposit',
-      component: DepositComponent
-    },
-    {
-      path: 'withdraw',
-      component: WithdrawComponent
-    }
-  ]
-}
+        component: AccountComponent,
+        children: [
+          {
+            path: 'personal-info',
+            component: PersonalInfoComponent,
+          },
+          {
+            path: 'uploads',
+            component: UploadsComponent,
+          },
+          {
+            path: 'settings',
+            component: SettingsComponent,
+          },
+        ],
+      },
+      {
+        path: 'analysis',
+        component: AnalysisComponent,
+      },
+      {
+        path: 'deposit',
+        component: DepositComponent,
+      },
+      {
+        path: 'withdraw',
+        component: WithdrawComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
@@ -57,6 +73,8 @@ export const dashboardRoutes: Routes = [{
     CommonModule,
     RouterModule.forChild(dashboardRoutes),
     NgxIntlTelInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     DashboardComponent,
@@ -66,11 +84,19 @@ export const dashboardRoutes: Routes = [{
     AnalysisComponent,
     DepositComponent,
     WithdrawComponent,
-    SideBarComponent
+    SideBarComponent,
+    PersonalInfoComponent,
+    UploadsComponent,
+    SettingsComponent
+    
   ],
   exports: [RouterModule],
-  providers: [AuthGuard, VerifyGuard, UnAuthGuard,
-    {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  providers: [
+    AuthGuard,
+    VerifyGuard,
+    UnAuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

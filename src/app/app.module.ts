@@ -41,6 +41,7 @@ import { FooterComponent } from './pages/shared/footer/footer.component';
 import { TradingHoursChangesComponent } from './pages/markets/trading-hours-changes/trading-hours-changes.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import {DashboardService} from './services/dashboard.service';
 
 
 
@@ -85,7 +86,7 @@ import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditi
     NgxIntlTelInputModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard, VerifyGuard, UnAuthGuard,
+  providers: [AuthGuard, VerifyGuard, UnAuthGuard, DashboardService,
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]

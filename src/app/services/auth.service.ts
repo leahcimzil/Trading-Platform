@@ -105,7 +105,7 @@ export class AuthService {
         const accountType = response.account_type;
         const first_login = response.first_login;
         if (!token) {
-        }  else if ( token && !first_login && response.is_verified) {
+        }  else if ( token && !first_login && response.is_email_verified) {
           this.token = token;
           this.isAuthenticated = true;
           this.isVerify = true;
@@ -113,6 +113,7 @@ export class AuthService {
           this.getAuthenticatedUpdated.next(true);
           this.getVerifyUpdated.next(true);
           this.saveAuthenticationData(token, userDetails, first_login);
+          this.navigate.routeDashboard();
         } else {
           this.token = token;
           this.isAuthenticated = true;
