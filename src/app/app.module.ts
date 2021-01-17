@@ -42,6 +42,7 @@ import { TradingHoursChangesComponent } from './pages/markets/trading-hours-chan
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 import {DashboardService} from './services/dashboard.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -88,7 +89,8 @@ import {DashboardService} from './services/dashboard.service';
   ],
   providers: [AuthGuard, VerifyGuard, UnAuthGuard, DashboardService,
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

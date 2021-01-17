@@ -67,7 +67,7 @@
       (change)="changePicture3($event)"/>
       
       <label for="file-upload3" id="file-drag3">
-      <img id="file-image3" [src]="utility ? utility : imgURL3"  alt="Preview" >
+      <img id="file-image3" [src]="utility ? utility : ''"  alt="Preview" >
       <div id="start3">
       <i class="fa fa-download" aria-hidden="true" *ngIf="!imgURL3"></i>
       <div *ngIf="!imgURL3">Select a file or drag here</div>

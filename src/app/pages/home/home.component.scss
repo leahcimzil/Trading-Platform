@@ -16,7 +16,7 @@
 }
 
 .first-row-word h2{
-  font-size: 49px;
+  font-size: 38px;
   font-weight: 600;
 }
 
@@ -61,9 +61,18 @@ margin-top: 12em;
   margin-top: 200px !important;
 }
 
-.third-row-word h2{
-  font-size: 45px !important;
-  font-weight: 600 !important;
+.third-row-word{
+  padding: 0 150px 0 !important;
+  h2{
+    font-size: 38px !important;
+    font-weight: 600 !important;
+  }
+
+  h6{
+    font-weight: 400 !important;
+    font-size: 14px !important;
+  }
+
 }
 
 .fourth-row {
@@ -102,7 +111,7 @@ font-weight: 600;
 }
 
 .fifth-row-header h2{
-  font-size: 45px !important;
+  font-size: 38px !important;
   font-weight: 600 !important;
 }
 
@@ -154,7 +163,7 @@ h6 {
 }
 
 .sixth-row-header h2 {
-  font-size: 45px !important;
+  font-size: 38px !important;
   font-weight: 600 !important;
   color: black !important;
 }
@@ -181,7 +190,7 @@ h6 {
 }
 
 .seven-row-header h2 {
-  font-size: 42px !important;
+  font-size: 38px !important;
   font-weight: 600 !important;
 }
 
@@ -214,13 +223,14 @@ h6 {
 }
 
 .eight-row-header h2 {
-  font-size: 34px !important;
+  font-size: 38px !important;
   font-weight: 500 !important;
 }
 
 .eight-row-header p {
   font-size: 14px !important;
-  font-weight: 500 !important;
+  padding: 0 100px 0 !important;
+  font-weight: 400 !important;
 }
 
 
@@ -242,6 +252,7 @@ h6 {
 }
 
 .award-row {
+  // width: 300vh !important;
   margin-top: 200px !important;
   h2 {
     font-size: 34px !important;
@@ -272,3 +283,16 @@ h6 {
 } */
 
 
+@media only screen and (max-height: 640px) {
+
+  .first-row {
+    margin-top: 60px !important;
+  }
+}
+
+@media only screen and (max-height: 768px) {
+
+  .first-row {
+    margin-top: 90px !important;
+  }
+}

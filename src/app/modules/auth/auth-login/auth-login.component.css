@@ -22,7 +22,7 @@
 
   .first-column-body-word{
       color: #FFFFFF;
-      font-size: 29px;
+      font-size: 25px;
       margin-top: 7em;
   }
 
@@ -344,4 +344,14 @@
     
     }
     
+}
+
+@media only screen and (max-height: 640px) {
+    .first-column-body {
+        margin-top: -120px !important
+    }
+
+    .second-column-header{
+        margin-top: -120px !important
+    }
 }
