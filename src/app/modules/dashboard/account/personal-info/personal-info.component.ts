@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CountryISO, PhoneNumberFormat, SearchCountryField, TooltipLabel } from 'ngx-intl-tel-input';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import { PnotifyService } from 'src/app/services/pnotify.service';
 
 @Component({
   selector: 'app-personal-info',
@@ -21,7 +23,8 @@ export class PersonalInfoComponent implements OnInit {
  preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
 
   constructor(private fb: FormBuilder, private dashboard: DashboardService,
-              private router: Router) { 
+              private router: Router, private spinner: NgxSpinnerService,
+              private notify: PnotifyService) { 
     this.form = this.fb.group({
       first_name: [''],
       last_name: [''],
@@ -38,7 +41,7 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.spinner.show();
     this.dashboard.ReloadNeeded.subscribe(
       () => {
            this.getAccount();
@@ -69,7 +72,10 @@ export class PersonalInfoComponent implements OnInit {
          country: this.data['0'].owner.country,
          address: this.data['0'].address ?  this.data['0'].address : '',
          zip_code: this.data['0'].zip_code ?  this.data['0'].zip_code : '',
-       })
+       }
+      
+       )
+       this.spinner.hide();
      }
         }
 
@@ -78,6 +84,7 @@ export class PersonalInfoComponent implements OnInit {
     )}
 
     submitForm() {
+      this.spinner.show();
       const { phone_number, date_of_birth,
         citizenship, city, country, address, zip_code} = this.form.value;
 
@@ -87,7 +94,9 @@ export class PersonalInfoComponent implements OnInit {
         }
         this.dashboard.updateAccount(this.id, data).subscribe(
           res => {
+            this.notify.notifyTrans();
              this.router.navigate(['/dashboard/account/uploads']);
+
           }
         );
 

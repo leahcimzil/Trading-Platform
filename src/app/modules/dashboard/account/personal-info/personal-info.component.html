@@ -1,3 +1,5 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
+</ngx-spinner>
 <div class="mt-3">
   <form class="mx-3" [formGroup]="form" (ngSubmit)="submitForm()">
     <div class="form-group row my-4 ">
@@ -28,28 +30,12 @@
             <small *ngIf = "signupForm.get('email').errors?.pattern"> Please provide a valid email address</small>
           </div> -->
         </div>
-        <div class="form-group col-md-6" >
-          <label for="phoneNumber" class="my-2">Phone number</label>
-          <ngx-intl-tel-input
-[cssClass]="'form-control form-control-lg custom'"
-[preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
-[enableAutoCountrySelect]="false"
-[enablePlaceholder]="true"
-[searchCountryFlag]="true"
-[searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
-[selectFirstCountry]="false"
-[selectedCountryISO]="CountryISO.India"
-[numberFormat]="PhoneNumberFormat.National"
-[maxLength]="15"
-[tooltipField]="TooltipLabel.Name"
-[phoneValidation]="true"
-name="phone"
-id="phoneNumber"
-formControlName="phone_number"
-></ngx-intl-tel-input>
-          <!-- <div class="text-danger phn" *ngIf = "signupForm.get('phone_number').invalid && signupForm.get('phone_number').touched ">
-            <small *ngIf = "signupForm.get('phone_number').errors?.required"> Phone number required</small>
-            <small *ngIf = "signupForm.get('phone_number').errors?.maxlength"> Phone number not valid</small>
+        <div class="form-group col-md-6">
+          <label for="phoneNumber" class="my-2">Phone Number</label>
+          <input type="text" class="form-control form-control-lg"
+                 id="phoneNumber" formControlName="phone_number" readonly>
+          <!-- <div class="text-danger" *ngIf = "signupForm.get('last_name').invalid &&  (signupForm.get('last_name').touched || signupForm.get('last_name').dirty) ">
+            <small *ngIf = "signupForm.get('last_name').errors?.required"> Last name required</small>
           </div> -->
         </div>
     </div>
@@ -61,14 +47,16 @@ formControlName="phone_number"
         id="dateOfBirth"  formControlName="date_of_birth">
     </div>
 
-      <div class="form-group col-md-6" >
-          <label for="citizenship" class="my-2">Citizenship</label>
-          <input type="text" class="form-control form-control-lg"
-                 id="citizenship" formControlName="citizenship">
-          <!-- <div class="text-danger" *ngIf = "signupForm.get('last_name').invalid &&  (signupForm.get('last_name').touched || signupForm.get('last_name').dirty) ">
-            <small *ngIf = "signupForm.get('last_name').errors?.required"> Last name required</small>
-          </div> -->
-      </div>
+    <div class="form-group col-md-6">
+      <label for="country" class="my-2">Country</label>
+      <input type="text" class="form-control form-control-lg"
+             id="country" formControlName="country" readonly>
+      <!-- <div class="text-danger" *ngIf = "signupForm.get('last_name').invalid &&  (signupForm.get('last_name').touched || signupForm.get('last_name').dirty) ">
+        <small *ngIf = "signupForm.get('last_name').errors?.required"> Last name required</small>
+      </div> -->
+    </div>
+
+ 
     </div>
 
 
@@ -81,14 +69,16 @@ formControlName="phone_number"
           <small *ngIf = "signupForm.get('first_name').errors?.required"> First name required</small>
         </div> -->
       </div>
-      <div class="form-group col-md-6">
-        <label for="country" class="my-2">Country</label>
+
+      <div class="form-group col-md-6" >
+        <label for="citizenship" class="my-2">Citizenship</label>
         <input type="text" class="form-control form-control-lg"
-               id="country" formControlName="country">
+               id="citizenship" formControlName="citizenship">
         <!-- <div class="text-danger" *ngIf = "signupForm.get('last_name').invalid &&  (signupForm.get('last_name').touched || signupForm.get('last_name').dirty) ">
           <small *ngIf = "signupForm.get('last_name').errors?.required"> Last name required</small>
         </div> -->
-      </div>
+    </div>
+  
     </div>
 
     <div class="form-group row my-4 ">

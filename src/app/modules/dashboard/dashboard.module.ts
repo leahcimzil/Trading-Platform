@@ -20,6 +20,8 @@ import { Interceptor } from 'src/app/utils/interceptor/auth-interceptor';
 import { ErrorInterceptor } from 'src/app/utils/interceptor/error-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { PnotifyService } from 'src/app/services/pnotify.service';
 
 export const dashboardRoutes: Routes = [
   {
@@ -75,6 +77,7 @@ export const dashboardRoutes: Routes = [
     NgxIntlTelInputModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   declarations: [
     DashboardComponent,
@@ -93,6 +96,7 @@ export const dashboardRoutes: Routes = [
   exports: [RouterModule],
   providers: [
     AuthGuard,
+    PnotifyService,
     VerifyGuard,
     UnAuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },

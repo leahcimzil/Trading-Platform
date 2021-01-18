@@ -1,8 +1,10 @@
 import { Component, OnInit, SecurityContext } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable } from 'rxjs';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import { PnotifyService } from 'src/app/services/pnotify.service';
 
 @Component({
   selector: 'app-uploads',
@@ -44,14 +46,17 @@ export class UploadsComponent implements OnInit {
   id_front = null
   id_back = null
   utility = null
-  constructor(private sanitizer: DomSanitizer, private fb: FormBuilder, private dashboard: DashboardService) { 
+  constructor(private sanitizer: DomSanitizer, private fb: FormBuilder,
+    private notify: PnotifyService,
+     private dashboard: DashboardService,
+     private spinner: NgxSpinnerService) { 
     this.imageUploadForm = this.fb.group({
       utility_bill: ['']
     });
   }
 
   ngOnInit() {
-
+  this.spinner.show();
     this.dashboard.ReloadNeeded.subscribe(
       () => {
         this.getUpload()
@@ -127,8 +132,8 @@ export class UploadsComponent implements OnInit {
   private getUpload() {
     this.dashboard.getDoc().subscribe(
       (data: any[]) => {
-     this.utility = data['0'].utility_bill;
-
+    //  this.utility = data['0'].utility_bill;
+    this.spinner.hide();
      }
         
 
@@ -138,6 +143,7 @@ export class UploadsComponent implements OnInit {
 
 
   onDrop() {
+    this.spinner.show();
     // if (event.target.files.length > 0) {
     //   const file = event.target.files[0];
     //   this.imageUploadForm.get('profile_picture').setValue(file);
@@ -148,7 +154,8 @@ export class UploadsComponent implements OnInit {
     formData.append('utility_bill', this.imageToUpload3);
     this.dashboard.uploadDoc(formData).subscribe(
       res => {
-
+        this.notify.notifySuccess();
+        this.spinner.hide();
       });
     }
 }

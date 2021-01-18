@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 export class TradeComponent implements OnInit {
  data;
  account_verified: boolean = true;
-  constructor(private dashboard: DashboardService) { }
+  constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
-
+    this.spinner.show();
     this.dashboard.ReloadNeeded.subscribe(
       () => {
            this.getAccount();
@@ -35,5 +36,6 @@ export class TradeComponent implements OnInit {
 
       
  
-    )}
+    )
+    this.spinner.hide();}
 }

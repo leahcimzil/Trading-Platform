@@ -9,15 +9,22 @@
 
 .first-row {
   margin-top: 200px !important;
+  p{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+  }
 }
 
 .first-row-word h5{
   font-size: 34px;
+  font-family: 'gilroy', sans-serif;
 }
 
 .first-row-word h2{
   font-size: 38px;
   font-weight: 600;
+  font-family: 'gilroy', sans-serif;
 }
 
 .first-row-word-button button {
@@ -37,6 +44,11 @@ margin-top: 12em;
 
 .second-row{
   margin-top: 200px !important;
+  p{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+  }
 }
 
 .second-row-word{
@@ -46,6 +58,7 @@ margin-top: 12em;
 .second-row-word h2{
   font-size: 38px !important;
   font-weight: 600 !important;
+  font-family: 'gilroy', sans-serif;
 }
 
 .second-row-word-button button {
@@ -66,11 +79,18 @@ margin-top: 12em;
   h2{
     font-size: 38px !important;
     font-weight: 600 !important;
+    font-family: 'gilroy', sans-serif;
   }
 
   h6{
     font-weight: 400 !important;
     font-size: 14px !important;
+    font-family: 'gilroy', sans-serif;
+  }
+  p{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
   }
 
 }
@@ -100,6 +120,7 @@ margin-top: 12em;
 .fourth-row-word-first-row-body h3 {
 font-size: 16px !important;
 font-weight: 600;
+font-family: 'gilroy', sans-serif;
 }
 
 .fourth-row-word-first-row-body p{
@@ -113,6 +134,7 @@ font-weight: 600;
 .fifth-row-header h2{
   font-size: 38px !important;
   font-weight: 600 !important;
+  font-family: 'gilroy', sans-serif;
 }
 
 .page-body {
@@ -135,6 +157,8 @@ font-weight: 600;
 .card-body h3 {
     font-weight: 600 !important;
     color: #2CD67C;
+    font-family: 'gilroy', sans-serif;
+    font-size: 38px;
 }
 
 .card-body p {
@@ -145,6 +169,7 @@ font-weight: 600;
 h6 {
     font-size: 20px;
     font-weight: 500;
+    font-family: 'gilroy', sans-serif;
 }
 
 
@@ -165,16 +190,23 @@ h6 {
 .sixth-row-header h2 {
   font-size: 38px !important;
   font-weight: 600 !important;
+  font-family: 'gilroy', sans-serif;
   color: black !important;
 }
 
 .sixth-row-word {
   color: black !important;
+  p{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+  }
 }
 
 .sixth-row-word h3 {
   font-weight: 600;
-  font-size: 33px;
+  font-size: 38px;
+  font-family: 'gilroy', sans-serif;
 }
 
 .sixth-row-word-button button {
@@ -192,6 +224,7 @@ h6 {
 .seven-row-header h2 {
   font-size: 38px !important;
   font-weight: 600 !important;
+  font-family: 'gilroy', sans-serif;
 }
 
 
@@ -200,8 +233,9 @@ h6 {
 }
 
 .seven-row-body-word h2 {
-  font-size: 25px !important;
+  font-size: 38px !important;
   font-weight: 600 !important;
+  font-family: 'gilroy', sans-serif;
 }
 
 .seven-row-body-word p {
@@ -225,12 +259,14 @@ h6 {
 .eight-row-header h2 {
   font-size: 38px !important;
   font-weight: 500 !important;
+  font-family: 'gilroy', sans-serif;
 }
 
 .eight-row-header p {
   font-size: 14px !important;
-  padding: 0 100px 0 !important;
+  padding: 0 150px 0 !important;
   font-weight: 400 !important;
+  line-height: 24px !important;
 }
 
 
@@ -255,8 +291,9 @@ h6 {
   // width: 300vh !important;
   margin-top: 200px !important;
   h2 {
-    font-size: 34px !important;
+    font-size: 38px !important;
     font-weight: 500 !important;
+    font-family: 'gilroy', sans-serif;
   }
 
   p {
@@ -272,8 +309,9 @@ h6 {
 
 
 .nine-row-header h2 {
-  font-size: 34px !important;
-  font-weight: 500 !important;
+  font-size: 38px !important;
+  font-weight: 600 !important;
+  font-family: 'gilroy', sans-serif;
 }
 
 

@@ -3,6 +3,7 @@ import $ from 'jquery';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ILoginDTO} from '../../../models/auth-model';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-auth-login',
@@ -15,7 +16,7 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor(private fb: FormBuilder, private auth: AuthService) {
+  constructor(private fb: FormBuilder, private auth: AuthService, private spinner: NgxSpinnerService) {
 
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
@@ -27,6 +28,7 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
 
 
   submitLogin(): void {
+    this.spinner.show();
     const {email, password} = this.loginForm.value;
 
     const data: ILoginDTO = {

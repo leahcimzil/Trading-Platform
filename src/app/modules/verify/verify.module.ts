@@ -10,6 +10,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/utils/interceptor/auth-interceptor';
 import { ErrorInterceptor } from 'src/app/utils/interceptor/error-interceptor';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { PnotifyService } from 'src/app/services/pnotify.service';
 
 
 const verifyRoutes: Routes = [{
@@ -26,12 +28,13 @@ const verifyRoutes: Routes = [{
     CommonModule,
     RouterModule.forChild(verifyRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   exports: [RouterModule],
   declarations: [VerifyComponent,
   VerifyEmailComponent],
-  providers: [AuthGuard, VerifyGuard, UnAuthGuard,
+  providers: [AuthGuard, PnotifyService, VerifyGuard, UnAuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
 })

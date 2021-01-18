@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import $ from 'jquery';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-email-verification',
   templateUrl: './email-verification.component.html',
@@ -8,7 +9,7 @@ import $ from 'jquery';
 })
 export class EmailVerificationComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }

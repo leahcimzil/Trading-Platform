@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import $ from 'jquery';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-verify-email',
@@ -9,7 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class VerifyEmailComponent implements OnInit, AfterViewInit {
   verifyForm: FormGroup
-  constructor(private fb: FormBuilder, private auth: AuthService) { 
+  constructor(private fb: FormBuilder, private auth: AuthService,
+    private spinner: NgxSpinnerService ) { 
     this.verifyForm = this.fb.group({
       verify1: [''],
       verify2: [''],
@@ -19,10 +21,12 @@ export class VerifyEmailComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.spinner.hide();
   }
 
 
   submitVerify() {
+    this.spinner.show();
     const { verify1, verify2, verify3, verify4} = this.verifyForm.value;
     const a: string = verify1;
     const b: string = verify2;

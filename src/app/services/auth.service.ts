@@ -6,6 +6,7 @@ import {StorageService} from './storage.service';
 import {NavigationService} from './navigation.service';
 import {Router} from '@angular/router';
 import {ILoginDTO, SignupDTO} from '../models/auth-model';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,8 @@ export class AuthService {
   constructor(private http: HttpClient,
               private storage: StorageService,
               private navigate: NavigationService,
-              private route: Router
+              private route: Router,
+              private spinner: NgxSpinnerService
   ) { }
 
 
@@ -121,6 +123,7 @@ export class AuthService {
           this.getAuthenticatedUpdated.next(true);
           this.saveAuthenticationData(token, userDetails, first_login);
           this.navigate.routeVerify();
+          this.spinner.show();
         }
       },
 
