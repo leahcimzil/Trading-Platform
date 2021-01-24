@@ -7,7 +7,9 @@ declare const TradingView: any;
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-
+  // products: any[];
+	
+	responsiveOptions;
      // allows for loading with any symbol
      @Input() symbol = '';
      settings: any = {};
@@ -19,7 +21,67 @@ export class HomeComponent implements OnInit, AfterViewInit {
      @ViewChild( 'containerDiv', { static: false } ) containerDiv: ElementRef;
      @ViewChild( 'containerDiv1', { static: false } ) containerDiv1: ElementRef;
 
-  constructor(private _elRef: ElementRef ) { }
+
+     products = [
+       {
+         name: '/assets/images/local.png'
+       },
+       {
+        name: '/assets/images/global.png'
+      },
+      {
+        name: '/assets/images/skrill.png'
+      },
+      {
+        name: '/assets/images/neteller.png'
+      },
+    
+      {
+        name: '/assets/images/visa.png'
+      },
+    
+      {
+        name: '/assets/images/master.png'
+      },
+    
+      {
+        name: '/assets/images/paypal.png'
+      },
+    
+      {
+        name: '/assets/images/tether.png'
+      },
+    
+      {
+        name: '/assets/images/wallet.png'
+      },
+    
+      {
+        name: '/assets/images/unionpay.png'
+      },
+    
+    
+     ]
+
+  constructor(private _elRef: ElementRef ) {
+    this.responsiveOptions = [
+      {
+          breakpoint: '1024px',
+          numVisible: 3,
+          numScroll: 3
+      },
+      {
+          breakpoint: '768px',
+          numVisible: 2,
+          numScroll: 2
+      },
+      {
+          breakpoint: '560px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
+   }
 
   ngOnInit(): void {
   }

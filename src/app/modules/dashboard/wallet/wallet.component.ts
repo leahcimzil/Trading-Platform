@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { AuthService } from 'src/app/services/auth.service';
 import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-wallet',
+  templateUrl: './wallet.component.html',
+  styleUrls: ['./wallet.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class WalletComponent implements OnInit {
 
   data;
  account_verified: boolean = true;
- name = '';
-  constructor(private dashboard: DashboardService, 
-    private spinner: NgxSpinnerService,
-    private auth: AuthService) { }
+  constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.spinner.show();
@@ -29,11 +25,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  logout() {
-    this.auth.logoutUser();
-  }
-
-
 
    private getAccount() {
     this.dashboard.getAccount().subscribe(
@@ -41,7 +32,6 @@ export class DashboardComponent implements OnInit {
      this.data = data;
      if(this.data) {
     this.account_verified = data['0'].is_account_verified;
-    this.name = data['0'].owner.first_name;
      }
         }
 

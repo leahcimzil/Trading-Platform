@@ -46,6 +46,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 import {PnotifyService} from './services/pnotify.service';
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
+import { MomentModule } from 'angular2-moment'; // optional, provides moment-style pipes for date formatting
+
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -88,6 +94,11 @@ import {PnotifyService} from './services/pnotify.service';
     NgxIntlTelInputModule,
     HttpClientModule,
     NgxSpinnerModule,
+    CarouselModule,
+    ButtonModule,
+    NgIdleKeepaliveModule.forRoot(),
+    MomentModule,
+    ModalModule.forRoot(),
   ],
   providers: [AuthGuard, PnotifyService, VerifyGuard, UnAuthGuard, DashboardService,
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },

@@ -7,6 +7,7 @@ import {NavigationService} from './navigation.service';
 import {Router} from '@angular/router';
 import {ILoginDTO, SignupDTO} from '../models/auth-model';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { PnotifyService } from './pnotify.service';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,8 @@ export class AuthService {
               private storage: StorageService,
               private navigate: NavigationService,
               private route: Router,
-              private spinner: NgxSpinnerService
+              private spinner: NgxSpinnerService,
+              private notify: PnotifyService
   ) { }
 
 
@@ -88,6 +90,7 @@ export class AuthService {
         this.getAuthenticatedUpdated.next(true);
         this.saveAuthenticationData(token, userDetails, first_login);
         this.navigate.routeVerify();
+        this.notify.notify(userDetails);
       }
     );
 
@@ -116,6 +119,7 @@ export class AuthService {
           this.getVerifyUpdated.next(true);
           this.saveAuthenticationData(token, userDetails, first_login);
           this.navigate.routeDashboard();
+          this.notify.notify(userDetails);
         } else {
           this.token = token;
           this.isAuthenticated = true;
@@ -124,6 +128,7 @@ export class AuthService {
           this.saveAuthenticationData(token, userDetails, first_login);
           this.navigate.routeVerify();
           this.spinner.show();
+          
         }
       },
 
@@ -143,6 +148,7 @@ export class AuthService {
         localStorage.setItem('verify', 'true');
         this.getVerifyUpdated.next(true);
         this.navigate.routeDashboard();
+        this.notify.notify(localStorage.getItem('userDetails'));
       });
   }
 

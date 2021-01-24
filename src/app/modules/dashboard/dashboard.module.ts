@@ -22,6 +22,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PnotifyService } from 'src/app/services/pnotify.service';
+import { WalletComponent } from './wallet/wallet.component';
 
 export const dashboardRoutes: Routes = [
   {
@@ -66,6 +67,10 @@ export const dashboardRoutes: Routes = [
         path: 'withdraw',
         component: WithdrawComponent,
       },
+      {
+        path: 'wallet',
+        component: WalletComponent,
+      },
     ],
   },
 ];
@@ -90,7 +95,8 @@ export const dashboardRoutes: Routes = [
     SideBarComponent,
     PersonalInfoComponent,
     UploadsComponent,
-    SettingsComponent
+    SettingsComponent,
+    WalletComponent
     
   ],
   exports: [RouterModule],

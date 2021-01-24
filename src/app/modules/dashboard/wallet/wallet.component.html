@@ -1,0 +1,24 @@
+<div class="" id="wrapper">
+    <div class="verify-message" *ngIf="!account_verified">
+      <p class="py-3 px-3 mt-2"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Note that your account has not been verified and you are unable to trade. <a routerLink="/dashboard/account/personal-info" style="text-decoration: underline;"><span>Click Here To Verify Your Account</span></a></p>
+    
+    </div>
+
+    <div class="col-lg-12 mt-5">
+        <div class="mx-5 d-flex justify-content-between">
+            <h3 >Wallet Balance</h3>
+            <div class="mr-2">
+                <button class="btn btn-danger" routerLink="/dashboard/deposit">Deposit</button>&nbsp;
+                <button class="btn btn-danger" routerLink="/dashboard/withdraw">Withdraw</button>
+            </div>
+        </div>
+        
+        <div class="card h-100 mx-5">
+            <div class="card-body pt-5 pb-5">
+      <p class="text-center mt-5 mb-5">$50,000</p>
+            </div>
+
+        </div>
+
+    </div>
+  </div>

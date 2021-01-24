@@ -46,6 +46,9 @@ export class UploadsComponent implements OnInit {
   id_front = null
   id_back = null
   utility = null
+
+
+  userName = localStorage.getItem('userDetails')
   constructor(private sanitizer: DomSanitizer, private fb: FormBuilder,
     private notify: PnotifyService,
      private dashboard: DashboardService,

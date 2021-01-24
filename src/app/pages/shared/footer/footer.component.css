@@ -13,7 +13,7 @@
     background-color: #312085;
     color: #FFFFFF;
     font-size: 18px;
-    font-weight: 600 !important;
+    /* font-weight: 600 !important; */
     letter-spacing: 2px;
     width: 250px;
     margin-top: -20px !important;
@@ -36,7 +36,7 @@
     background-color: #312085;
     color: #FFFFFF;
     font-size: 18px;
-    font-weight: 600 !important;
+    /* font-weight: 600 !important; */
     letter-spacing: 2px;
     width: 250px;
   }

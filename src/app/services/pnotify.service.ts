@@ -33,13 +33,13 @@ export class PnotifyService {
     };
     this.pnotify = this.getPNotify();
     this.pnotify.notice({
-      title: `Welcome Back ${title}!`,
+      title: `Welcome ${title}!`,
       stack: stackTopModal,
-      width: 'auto',
+      width: '400px',
       // text: `${text}`,
       cornerclass: 'ui-pnotify-sharp',
       styling: 'bootstrap4',
-      // icons: 'fontawesome4',
+      icons: 'fontawesome4',
       // type: `${type}`
     });
   }
