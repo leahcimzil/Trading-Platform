@@ -116,9 +116,10 @@
 
                           <div class="form-group my-4">
                             <label for="country" class="my-2">country</label>
-                            <select name="" class="form-control form-control-lg" id="country" formControlName="country"
+                            <select name="" class="form-select form-select-lg" id="country" formControlName="country"
                                     [class.border-danger]="signupForm.get('country').invalid && signupForm.get('country').touched">
-                                <option value="Nigeria">Nigeria</option>
+                                    <option  value="" selected>Select your country</option>
+                                <option *ngFor="let c of country" value="{{c.name}}">{{c.name}}</option>
                             </select>
                             <div class="text-danger" *ngIf = "signupForm.get('country').invalid &&  (signupForm.get('country').touched || signupForm.get('country').dirty) ">
                               <small *ngIf = "signupForm.get('country').errors?.required"> Country required</small>

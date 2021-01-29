@@ -48,6 +48,9 @@ export class UploadsComponent implements OnInit {
   utility = null
 
 
+  uploads = [];
+
+
   userName = localStorage.getItem('userDetails')
   constructor(private sanitizer: DomSanitizer, private fb: FormBuilder,
     private notify: PnotifyService,
@@ -135,7 +138,7 @@ export class UploadsComponent implements OnInit {
   private getUpload() {
     this.dashboard.getDoc().subscribe(
       (data: any[]) => {
-    //  this.utility = data['0'].utility_bill;
+    this.uploads = data;
     this.spinner.hide();
      }
         

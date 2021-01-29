@@ -34,7 +34,10 @@
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/qrcode-generator/qrcode_UTF8.js",
+              "./node_modules/angular-qrcode/angular-qrcode.js",
+              "./node_modules/qrcode-generator/qrcode.js"
             ]
           },
           "configurations": {

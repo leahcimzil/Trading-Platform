@@ -13,6 +13,8 @@ export class DashboardComponent implements OnInit {
   data;
  account_verified: boolean = true;
  name = '';
+ firstPayment = true;
+ admin = false;
   constructor(private dashboard: DashboardService, 
     private spinner: NgxSpinnerService,
     private auth: AuthService) { }
@@ -42,6 +44,8 @@ export class DashboardComponent implements OnInit {
      if(this.data) {
     this.account_verified = data['0'].is_account_verified;
     this.name = data['0'].owner.first_name;
+    this.firstPayment = data['0'].owner.is_first_payment;
+    this.admin = data['0'].owner.is_admin;
      }
         }
 

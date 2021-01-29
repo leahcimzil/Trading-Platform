@@ -11,6 +11,7 @@ export class WalletComponent implements OnInit {
 
   data;
  account_verified: boolean = true;
+ firstPayment = true;
   constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
@@ -32,6 +33,7 @@ export class WalletComponent implements OnInit {
      this.data = data;
      if(this.data) {
     this.account_verified = data['0'].is_account_verified;
+    this.firstPayment = data['0'].owner.is_first_payment;
      }
         }
 

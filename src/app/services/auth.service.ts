@@ -234,6 +234,11 @@ export class AuthService {
 // ============== End Manipulation Authentication Data =================
 
 
+getCountry() {
+ return this.http.get(`${this.API_URL}/core/countries/`) 
+}
+
+
 }
 
 

@@ -12,7 +12,12 @@
     A colored picture/scan of a valid Government issued Photo I.D,
     front and back (i.e /Driver License/ Passport/ Identification Card)
   </p>
-  <div class="d-flex justify-content-between mt-5">
+
+  <div class="d-flex justify-content-center mt-5"  *ngIf="uploads.length > 0">
+       <h2 class="text-center">Uploads Verification Completed</h2>
+  </div>
+
+  <div class="d-flex justify-content-between mt-5"  *ngIf="uploads.length === 0">
   <div>
  <p>Upload Front Page of Government Issued ID</p>
  <!-- Upload  -->
@@ -38,9 +43,9 @@
 </label>
 </form>
   </div>
-  <div>
+  <div  *ngIf="uploads.length === 0">
     <p>Upload Back Page of Government Issued ID</p>
-    <form id="file-upload-form2" class="uploader2">
+    <form id="file-upload-form2" class="uploader2"  *ngIf="uploads.length === 0">
       <input id="file-upload2" type="file" name="fileUpload2" accept="image/*" #fileInput1
       (change)="changePicture2($event)"/>
       
@@ -64,7 +69,7 @@
   </div>
   </div>
   <div class="d-flex justify-content-center mt-3">
-    <form id="file-upload-form3" class="uploader3" >
+    <form id="file-upload-form3" class="uploader3" *ngIf="uploads.length === 0">
       <input id="file-upload3" type="file" name="utility_bill" accept="image/*" #fileInput2
       (change)="changePicture3($event)"/>
       
@@ -89,7 +94,7 @@
   
   </div>
 
-  <div class="button d-flex justify-content-end">
+  <div class="button d-flex justify-content-end"  *ngIf="uploads.length === 0">
     <button class="btn py-3" type="submit" (click)="onDrop()">Upload</button>
         </div>
 

@@ -11,6 +11,7 @@ import { SettingsComponent } from '../dashboard/account/settings/settings.compon
 import { AnalysisComponent } from '../dashboard/analysis/analysis.component';
 import { DepositComponent } from '../dashboard/deposit/deposit.component';
 import { WithdrawComponent } from '../dashboard/withdraw/withdraw.component';
+import { PaymentComponent } from '../dashboard/payment/payment.component';
 import { SideBarComponent } from '../dashboard/side-bar/side-bar.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { AuthGuard } from 'src/app/utils/guards/auth-guard';
@@ -71,7 +72,12 @@ export const dashboardRoutes: Routes = [
         path: 'wallet',
         component: WalletComponent,
       },
+      {
+        path: 'payment',
+        component: PaymentComponent
+      }
     ],
+
   },
 ];
 
@@ -96,7 +102,8 @@ export const dashboardRoutes: Routes = [
     PersonalInfoComponent,
     UploadsComponent,
     SettingsComponent,
-    WalletComponent
+    WalletComponent,
+    PaymentComponent
     
   ],
   exports: [RouterModule],

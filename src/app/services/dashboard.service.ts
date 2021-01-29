@@ -48,6 +48,19 @@ uploadDoc(data: any) {
  }
 
 
+ postPayment(data: any) {
+  return this.http.post<any>(`${this.API_URL}/core/create_payment/`, data).pipe(
+     tap( () => {this.getReloadNeeded.next(); }
+
+     )
+   );
+ }
+
+ getQrCode(): Observable<any> {
+  return this.http.get<any>(`https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&color=1&prefix=on&address=1M5m1DuGw4Wyq1Nf8sfoKRM6uA4oREzpCX`);
+}
+
+
  getDoc() {
   return this.http.get<any>(`${this.API_URL}/auth/upload_verification_documents/`);
  }

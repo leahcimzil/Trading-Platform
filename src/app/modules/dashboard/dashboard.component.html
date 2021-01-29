@@ -8,6 +8,11 @@
                   <li class="sidebar-brand"><a id="menu-toggle">Logo</a></li>
               </ul>
               <ul class="sidebar-nav" id="sidebar">
+                <li *ngIf='admin'>
+                  <a  routerLinkActive="active">
+                    <i class="fa fa-user" aria-hidden="true"></i> Admin
+                  </a>
+                </li>
                   <li>
                       <a routerLink="/dashboard/trade" routerLinkActive="active">
                         <i class="fa fa-exchange" aria-hidden="true"></i> Trade
@@ -38,7 +43,8 @@
                         <i class="fa fa-cog" aria-hidden="true"></i> Account
                       </a>
                     </li>
-                    <li class="header"><a class="btn" routerLink="/dashboard/deposit">Deposit</a></li>
+                    <li *ngIf="firstPayment" class="header"><a class="btn" routerLink="/dashboard/payment">Deposit</a></li>
+                    <li *ngIf="!firstPayment" class="header"><a class="btn" routerLink="/dashboard/deposit">Deposit</a></li>
               </ul>
           </div>
       </nav>

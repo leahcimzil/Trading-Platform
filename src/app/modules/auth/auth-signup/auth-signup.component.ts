@@ -14,6 +14,8 @@ declare var $: any;
 export class AuthSignupComponent implements OnInit, AfterViewInit {
   signupForm: FormGroup;
 
+  country: any;
+
   separateDialCode = false;
   SearchCountryField = SearchCountryField;
   TooltipLabel = TooltipLabel;
@@ -63,7 +65,11 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
 }
 
   ngOnInit(): void {
-
+    this.auth.getCountry().subscribe(
+      data => {
+   this.country = data;
+      }
+    )
   }
 
   ngAfterViewInit(): void {
