@@ -24,7 +24,8 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PnotifyService } from 'src/app/services/pnotify.service';
 import { WalletComponent } from './wallet/wallet.component';
-
+import { AdminComponent } from './admin/admin.component';
+import { AdminDetailsComponent } from '../dashboard/admin/admin-details/admin-details.component';
 export const dashboardRoutes: Routes = [
   {
     path: '',
@@ -37,6 +38,14 @@ export const dashboardRoutes: Routes = [
       {
         path: 'transaction-history',
         component: TransactionHistoryComponent,
+      },
+      {
+        path: 'admin',
+        component: AdminComponent,
+      },
+      {
+        path: 'admin/:id',
+        component: AdminDetailsComponent
       },
       {
         path: 'account',
@@ -103,7 +112,9 @@ export const dashboardRoutes: Routes = [
     UploadsComponent,
     SettingsComponent,
     WalletComponent,
-    PaymentComponent
+    AdminComponent,
+    PaymentComponent,
+    AdminDetailsComponent
     
   ],
   exports: [RouterModule],

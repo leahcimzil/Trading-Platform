@@ -32,7 +32,7 @@ export class WalletComponent implements OnInit {
       (data: any[]) => {
      this.data = data;
      if(this.data) {
-    this.account_verified = data['0'].is_account_verified;
+    this.account_verified = data['0'].owner.is_account_verified;
     this.firstPayment = data['0'].owner.is_first_payment;
      }
         }

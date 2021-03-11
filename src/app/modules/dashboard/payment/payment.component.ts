@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { NgxSpinner } from 'ngx-spinner/lib/ngx-spinner.enum';
 import { DashboardService } from 'src/app/services/dashboard.service';
@@ -14,7 +15,15 @@ export class PaymentComponent implements OnInit {
   id= '';
   data = ''
   show = 'true'
-  constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService) { }
+
+
+  copyForm: FormGroup
+  constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService,
+             private fb: FormBuilder) {
+               this.copyForm = this.fb.group({
+                 copy: ['']
+               })
+              }
 
   ngOnInit() {
     this.spinner.show();
@@ -27,6 +36,14 @@ export class PaymentComponent implements OnInit {
     //  this.getQr();
 
    
+  }
+
+  /* To copy Text from Textbox */
+  copyInputMessage(inputElement: any){
+    // let inputElement = this.copyForm.get('copy').value;
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
   }
 
 
@@ -49,6 +66,11 @@ export class PaymentComponent implements OnInit {
     };
     this.dashboard.postPayment(data).subscribe(
       res => {
+        if(res) {
+          this.copyForm.patchValue({
+            copy: res.wallet_address
+          });
+        }
         this.address = res.wallet_address;
         this.id = res.id;
         this.amount = res.value_of_crypto;

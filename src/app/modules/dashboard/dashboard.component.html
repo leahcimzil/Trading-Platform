@@ -5,11 +5,13 @@
           <!-- Sidebar -->
           <div id="sidebar-wrapper">
               <ul id="sidebar_menu" class="sidebar-nav">
-                  <li class="sidebar-brand"><a id="menu-toggle">Logo</a></li>
+                  <li class="sidebar-brand"><a id="menu-toggle">
+                    <img src='/assets/images/logo.svg' width="200" alt="Logo Image">
+                  </a></li>
               </ul>
               <ul class="sidebar-nav" id="sidebar">
                 <li *ngIf='admin'>
-                  <a  routerLinkActive="active">
+                  <a  routerLinkActive="active" routerLink="/dashboard/admin">
                     <i class="fa fa-user" aria-hidden="true"></i> Admin
                   </a>
                 </li>
@@ -60,7 +62,7 @@
   Logo
       </a> -->
       <a class="link" >Hi, {{name | uppercase}}!</a>
-      <a class="link" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+      <a class="link pointer" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
       
     </nav>  
  

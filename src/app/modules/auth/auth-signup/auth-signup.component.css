@@ -26,7 +26,7 @@
       margin-top: 7em;
   }
 
-  img{
+  .img{
     height: 370px !important;
     width: 370px !important;
     /* margin-bottom: 140px !important; */
@@ -399,7 +399,7 @@ input {
 /* Large devices (laptops/desktops, 992px and down) */
 @media only screen and (max-width: 992px) {
 
-    img{
+    .img{
         height: 200px !important;
         width: 10px !important;
         /* margin-bottom: 140px !important; */
@@ -415,7 +415,7 @@ input {
 }
 
 @media only screen and (max-width: 1109px) {
-    img{
+    .img{
         height: 290px !important;
         width: 200px !important;
         /* margin-bottom: 140px !important; */
@@ -432,7 +432,7 @@ input {
 }
 
 @media only screen and (max-width: 1264px) {
-    img{
+    .img{
         height: 290px !important;
         width: 300px !important;
         /* margin-bottom: 140px !important; */

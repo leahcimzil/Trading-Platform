@@ -66,6 +66,35 @@ uploadDoc(data: any) {
  }
 
 
+ getUser() {
+   return this.http.get<any>(`${this.API_URL}/auth/users/`);
+ }
+
+ activateUser(id: any, data: any) {
+  return this.http.patch<any>(`${this.API_URL}/auth/users/${id}/`, data).pipe(
+     tap( () => {this.getReloadNeeded.next(); }
+
+     )
+   );
+ }
+
+ upgradeUser(id: any, data: any) {
+  return this.http.patch<any>(`${this.API_URL}/auth/users/${id}/`, data).pipe(
+     tap( () => {this.getReloadNeeded.next(); }
+
+     )
+   );
+ }
+
+
+
+ getUserId(id: any) {
+  return this.http.get<any>(`${this.API_URL}/auth/user_details/${id}/`);
+}
+
+
+
+
 
 
 }

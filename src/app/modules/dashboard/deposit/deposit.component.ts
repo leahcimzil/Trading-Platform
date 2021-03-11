@@ -16,7 +16,7 @@ export class DepositComponent implements OnInit {
   show = 'true'
 
   amountLabel = '';
-
+  copyForm: FormGroup
   payForm: FormGroup;
   constructor(private dashboard: DashboardService,
     private fb: FormBuilder,
@@ -25,10 +25,23 @@ export class DepositComponent implements OnInit {
          amount: ['']
        })
 
+       this.copyForm = this.fb.group({
+        copy: ['']
+      })
+
   }
 
   ngOnInit() {
   }
+
+    /* To copy Text from Textbox */
+    copyInputMessage(inputElement: any){
+      // let inputElement = this.copyForm.get('copy').value;
+      inputElement.select();
+      document.execCommand('copy');
+      inputElement.setSelectionRange(0, 0);
+    }
+  
 
   input() {
     this.amountLabel = '$'+this.payForm.get('amount').value
@@ -41,6 +54,11 @@ export class DepositComponent implements OnInit {
     };
     this.dashboard.postPayment(data).subscribe(
       res => {
+        if (res) {
+          this.copyForm.patchValue({
+            copy: res.wallet_address
+          })
+        }
         this.address = res.wallet_address;
         this.id = res.id;
         this.amount = res.value_of_crypto;

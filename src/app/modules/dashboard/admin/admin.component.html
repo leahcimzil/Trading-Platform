@@ -1,0 +1,106 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)"
+ [fullScreen]="false" type="ball-spin-clockwise" size="small">
+</ngx-spinner>
+<div class="" id="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+  <main role="main" class="col-md-12 ml-sm-auto col-lg-12 my-3">
+    <!-- <div class="card-list">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card blue">
+            <div class="title">Total Users</div>
+            <i class="zmdi zmdi-upload"></i>
+            <div class="value">89</div>
+            <div class="stat"><b>13</b>% increase</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card green">
+            <div class="title">Approved Users</div>
+            <i class="zmdi zmdi-upload"></i>
+            <div class="value">5,990</div>
+            <div class="stat"><b>4</b>% increase</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card orange">
+            <div class="title">Pending Users</div>
+            <i class="zmdi zmdi-download"></i>
+            <div class="value">$80,990</div>
+            <div class="stat"><b>13</b>% decrease</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card red">
+            <div class="title">Rejected Users</div>
+            <i class="zmdi zmdi-download"></i>
+            <div class="value">3</div>
+            <div class="stat"><b>13</b>% decrease</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="projects mb-4">
+      <div class="projects-inner">
+        <header class="projects-header">
+          <div class="title">All Users</div>
+          <div class="count">| ({{length}})</div>
+          <i class="zmdi zmdi-download"></i>
+        </header>
+        <table class="projects-table">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Phone no</th>
+              <th>Country</th>
+              <th>Account Type</th>
+              <!-- <th>Budget</th> -->
+              <th>Status</th>
+              <th class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor = "let a of data">
+          <tr class="pointer" [routerLink]="['/dashboard/admin', a.id]" routerLinkActive="router-link-active" >
+            <td class="member">
+              <figure><img [src]="a.profile_pic ? a.profile_pic : '/assets/images/usersvg.svg'" /></figure>
+              <div class="member-info">
+                <p>{{a.last_name}}&nbsp;{{a.first_name}}</p>
+                <!-- <p>UK Design Team</p> -->
+              </div>
+            </td>
+            <td>
+              <p>{{a.email}}</p>
+              <!-- <p>Google</p> -->
+            </td>
+            <td>
+              <p>{{a.phone_number}}</p>
+              <!-- <p class="text-danger">Overdue</p> -->
+            </td>
+      
+            <td>
+              <p>{{a.country}}</p>
+              <!-- <p>Paid</p> -->
+            </td>
+            <td>
+              <p>{{a.account_type ? a.account_type : '-'}}</p>
+              <!-- <p>Paid</p> -->
+            </td>
+            <td class="status">
+              <span class="status-text status-green" *ngIf="a.is_account_verified">Activated</span>
+              <span class="status-text status-orange" *ngIf="!(a.is_account_verified)">Pending</span>
+            </td>
+            <td>
+                <a class="text-success" *ngIf="!(a.is_account_verified)" (click)="activate(a.id)">Activate</a>
+                <a class="text-warning" [routerLink]="['/dashboard/admin', a.id]" *ngIf="(a.is_account_verified)" (click)="activate(a.id)">Upgrade</a><br>
+                <a class="text-danger" *ngIf="(a.is_account_verified)" (click)="activate(a.id)">Disable</a>
+              </td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  </div>
+</div>
