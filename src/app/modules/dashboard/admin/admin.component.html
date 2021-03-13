@@ -5,47 +5,47 @@
   <div class="container-fluid">
     <div class="row">
   <main role="main" class="col-md-12 ml-sm-auto col-lg-12 my-3">
-    <!-- <div class="card-list">
+    <div class="card-list">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="card blue">
             <div class="title">Total Users</div>
             <i class="zmdi zmdi-upload"></i>
-            <div class="value">89</div>
-            <div class="stat"><b>13</b>% increase</div>
+            <div class="value">{{dataSummary.no_of_users}}</div>
+            <!-- <div class="stat"><b>13</b>% increase</div> -->
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="card green">
             <div class="title">Approved Users</div>
             <i class="zmdi zmdi-upload"></i>
-            <div class="value">5,990</div>
-            <div class="stat"><b>4</b>% increase</div>
+          <div class="value">{{dataSummary.accepted_users.length}}</div>
+            <!-- <div class="stat"><b>4</b>% increase</div> -->
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="card orange">
             <div class="title">Pending Users</div>
             <i class="zmdi zmdi-download"></i>
-            <div class="value">$80,990</div>
-            <div class="stat"><b>13</b>% decrease</div>
+            <div class="value">{{dataSummary.pending_users.length}}</div>
+            <!-- <div class="stat"><b>13</b>% decrease</div> -->
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="card red">
-            <div class="title">Rejected Users</div>
+            <div class="title">Disabled Users</div>
             <i class="zmdi zmdi-download"></i>
-            <div class="value">3</div>
-            <div class="stat"><b>13</b>% decrease</div>
+            <div class="value">{{dataSummary.rejected_users.length}}</div>
+            <!-- <div class="stat"><b>13</b>% decrease</div> -->
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="projects mb-4">
       <div class="projects-inner">
         <header class="projects-header">
           <div class="title">All Users</div>
-          <div class="count">| ({{length}})</div>
+          <div class="count">| ({{dataSummary.no_of_users}})</div>
           <i class="zmdi zmdi-download"></i>
         </header>
         <table class="projects-table">
@@ -88,13 +88,14 @@
               <!-- <p>Paid</p> -->
             </td>
             <td class="status">
-              <span class="status-text status-green" *ngIf="a.is_account_verified">Activated</span>
-              <span class="status-text status-orange" *ngIf="!(a.is_account_verified)">Pending</span>
+              <span class="status-text status-green" *ngIf="a.user_status==='Activated' || a.user_status==='Accepted'">Activated</span>
+              <span class="status-text status-orange" *ngIf="a.user_status==='Pending'">Pending</span>
+              <span class="status-text status-red" *ngIf="a.user_status==='Rejected'">Disabled</span>
             </td>
             <td>
-                <a class="text-success" *ngIf="!(a.is_account_verified)" (click)="activate(a.id)">Activate</a>
-                <a class="text-warning" [routerLink]="['/dashboard/admin', a.id]" *ngIf="(a.is_account_verified)" (click)="activate(a.id)">Upgrade</a><br>
-                <a class="text-danger" *ngIf="(a.is_account_verified)" (click)="activate(a.id)">Disable</a>
+                <a class="text-success" *ngIf="a.user_status==='Pending' || a.user_status==='Rejected'" (click)="activate(a.id, 'Accepted')">Activate</a>
+                <a class="text-warning" [routerLink]="['/dashboard/admin', a.id]" *ngIf="a.user_status==='Activated'|| a.user_status==='Accepted'" (click)="activate(a.id)">Upgrade</a><br>
+                <a class="text-danger" *ngIf="a.user_status==='Activated'|| a.user_status==='Accepted'" (click)="activate(a.id, 'Rejected')">Disable</a>
               </td>
           </tr>
         </tbody>

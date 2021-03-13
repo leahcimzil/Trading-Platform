@@ -10,6 +10,7 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 export class AdminComponent implements OnInit {
 
   data: any[];
+  dataSummary: any;
   account_verified: boolean = true;
   firstPayment = true;
   length: any;
@@ -20,16 +21,18 @@ export class AdminComponent implements OnInit {
     this.dashboard.ReloadNeeded.subscribe(
       () => {
            this.getAccount();
+           this.getAccountSummary();
         
       }
     );
     this.getAccount();
+    this.getAccountSummary();
   }
 
-  activate(id: any) {
+  activate(id: any, event: any) {
     // console.log(id);
     const data: any = {
-      is_account_verified: true
+      user_status: event
     };
     this.dashboard.activateUser(id, data).subscribe(
       res => {
@@ -55,5 +58,21 @@ export class AdminComponent implements OnInit {
  
     )
     this.spinner.hide();}
+
+    private getAccountSummary() {
+      this.dashboard.getUserSummary().subscribe(
+        (data: any[]) => {
+       this.dataSummary = data;
+       this.length = data.length;
+       if(this.data) {
+      // this.account_verified = data['0'].is_account_verified;
+      // this.firstPayment = data['0'].owner.is_first_payment;
+       }
+          }
+  
+        
+   
+      )
+      this.spinner.hide();}
 
 }

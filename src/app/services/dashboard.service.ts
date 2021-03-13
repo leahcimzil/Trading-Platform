@@ -70,6 +70,9 @@ uploadDoc(data: any) {
    return this.http.get<any>(`${this.API_URL}/auth/users/`);
  }
 
+ getUserSummary() {
+  return this.http.get<any>(`${this.API_URL}/auth/users_summary/`);
+}
  activateUser(id: any, data: any) {
   return this.http.patch<any>(`${this.API_URL}/auth/users/${id}/`, data).pipe(
      tap( () => {this.getReloadNeeded.next(); }

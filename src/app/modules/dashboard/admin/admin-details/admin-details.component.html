@@ -8,8 +8,9 @@
     <div class="profile-nav-info">
       <h3 class="user-name">{{account.last_name}}&nbsp;{{account.first_name}}</h3>
       <div class="address">
-        <button *ngIf="account.is_account_verified" class="chatbtn bg-success" id="chatBtn">Activated</button>
-        <button  *ngIf="!account.is_account_verified" class="chatbtn bg-warning" id="chatBtn">Pending</button>
+        <button *ngIf="account.user_status === 'Accepted'" class="chatbtn bg-success" id="chatBtn">Activated</button>
+        <button  *ngIf="account.user_status === 'Pending'" class="chatbtn bg-warning" id="chatBtn">Pending</button>
+        <button  *ngIf="account.user_status === 'Rejected'" class="chatbtn bg-danger" id="chatBtn">Disabled</button>
         <!-- <button  *ngIf="account.is_account_verified"class="chatbtn bg-danger" id="chatBtn">Rejected</button> -->
       </div>
     </div>
