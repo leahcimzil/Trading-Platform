@@ -8,7 +8,7 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 })
 export class WithdrawComponent implements OnInit {
   data;
-  account_verified: boolean = true;
+  account_verified = 'Pending';
    constructor(private dashboard: DashboardService) { }
  
    ngOnInit() {
@@ -29,7 +29,7 @@ export class WithdrawComponent implements OnInit {
        (data: any[]) => {
       this.data = data;
       if(this.data) {
-     this.account_verified = data['0'].is_account_verified;
+        this.account_verified = data['0'].owner.user_status;
       }
          }
  

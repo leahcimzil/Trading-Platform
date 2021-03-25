@@ -129,7 +129,7 @@ export class PaymentComponent implements OnInit {
         this.spinner.hide();
       }
     )
-    this.show = 'false'
+    this.show = 'false';
   }
 
 }

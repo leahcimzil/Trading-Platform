@@ -1,58 +1,57 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DashboardService } from 'src/app/services/dashboard.service';
 declare const TradingView: any;
 @Component({
   selector: 'app-analysis',
   templateUrl: './analysis.component.html',
-  styleUrls: ['./analysis.component.scss']
+  styleUrls: ['./analysis.component.scss'],
 })
 export class AnalysisComponent implements OnInit, AfterViewInit {
-     // allows for loading with any symbol
-     @Input() symbol = '';
-     settings1: any = {};
-     // id for being able to check for errors using postMessage
-     widgetId = '';
+  // allows for loading with any symbol
+  @Input() symbol = '';
+  settings1: any = {};
+  // id for being able to check for errors using postMessage
+  widgetId = '';
 
-     // wanted to be able to hide the widget if the symbol passed in was invalid (don't love their sad cloud face)
-     @ViewChild( 'containerDiv1', { static: false } ) containerDiv1: ElementRef;
+  // wanted to be able to hide the widget if the symbol passed in was invalid (don't love their sad cloud face)
+  @ViewChild('containerDiv1', { static: false }) containerDiv1: ElementRef;
   data;
-  account_verified: boolean = true;
-   constructor(private dashboard: DashboardService, private _elRef: ElementRef,
-    private spinner: NgxSpinnerService) { }
- 
-   ngOnInit() {
+  account_verified = 'Pending';
+  constructor(
+    private dashboard: DashboardService,
+    private _elRef: ElementRef,
+    private spinner: NgxSpinnerService
+  ) {}
+
+  ngOnInit() {
     this.spinner.show();
-     this.dashboard.ReloadNeeded.subscribe(
-       () => {
-            this.getAccount();
-         
-       }
-     );
-     this.getAccount();
-   }
- 
- 
- 
-    private getAccount() {
-     this.dashboard.getAccount().subscribe(
-       (data: any[]) => {
+    this.dashboard.ReloadNeeded.subscribe(() => {
+      this.getAccount();
+    });
+    this.getAccount();
+  }
+
+  private getAccount() {
+    this.dashboard.getAccount().subscribe((data: any[]) => {
       this.data = data;
-      if(this.data) {
-     this.account_verified = data['0'].owner.is_account_verified;
+      if (this.data) {
+        this.account_verified = data['0'].owner.user_status;
       }
-         }
- 
-       
-  
-     )
-     this.spinner.hide();}
+    });
+    this.spinner.hide();
+  }
 
-     ngAfterViewInit(): void {
-
-      // tslint:disable-next-line: no-unused-expression
-      new TradingView.widget(
-      {
+  ngAfterViewInit(): void {
+    // tslint:disable-next-line: no-unused-expression
+    new TradingView.widget({
       width: 900,
       height: 610,
       symbol: 'NASDAQ:AAPL',
@@ -64,14 +63,11 @@ export class AnalysisComponent implements OnInit, AfterViewInit {
       toolbar_bg: '#f1f3f6',
       enable_publishing: false,
       allow_symbol_change: true,
-      container_id: 'tradingview_b4281'
-    }
-      );
+      container_id: 'tradingview_b4281',
+    });
 
-
-      
-  this.settings1 = {
-    colorTheme: 'light',
+    this.settings1 = {
+      colorTheme: 'light',
       dateRange: '12M',
       showChart: true,
       locale: 'en',
@@ -93,128 +89,128 @@ export class AnalysisComponent implements OnInit, AfterViewInit {
           symbols: [
             {
               s: 'FOREXCOM:SPXUSD',
-              d: 'S&P 500'
+              d: 'S&P 500',
             },
             {
               s: 'FOREXCOM:NSXUSD',
-              d: 'Nasdaq 100'
+              d: 'Nasdaq 100',
             },
             {
               s: 'FOREXCOM:DJI',
-              d: 'Dow 30'
+              d: 'Dow 30',
             },
             {
               s: 'INDEX:NKY',
-              d: 'Nikkei 225'
+              d: 'Nikkei 225',
             },
             {
               s: 'INDEX:DEU30',
-              d: 'DAX Index'
+              d: 'DAX Index',
             },
             {
               s: 'FOREXCOM:UKXGBP',
-              d: 'FTSE 100'
-            }
+              d: 'FTSE 100',
+            },
           ],
-          originalTitle: 'Indices'
+          originalTitle: 'Indices',
         },
         {
           title: 'Commodities',
           symbols: [
             {
               s: 'CME_MINI:ES1!',
-              d: 'S&P 500'
+              d: 'S&P 500',
             },
             {
               s: 'CME:6E1!',
-              d: 'Euro'
+              d: 'Euro',
             },
             {
               s: 'COMEX:GC1!',
-              d: 'Gold'
+              d: 'Gold',
             },
             {
               s: 'NYMEX:CL1!',
-              d: 'Crude Oil'
+              d: 'Crude Oil',
             },
             {
               s: 'NYMEX:NG1!',
-              d: 'Natural Gas'
+              d: 'Natural Gas',
             },
             {
               s: 'CBOT:ZC1!',
-              d: 'Corn'
-            }
+              d: 'Corn',
+            },
           ],
-          originalTitle: 'Commodities'
+          originalTitle: 'Commodities',
         },
         {
           title: 'Bonds',
           symbols: [
             {
               s: 'CME:GE1!',
-              d: 'Eurodollar'
+              d: 'Eurodollar',
             },
             {
               s: 'CBOT:ZB1!',
-              d: 'T-Bond'
+              d: 'T-Bond',
             },
             {
               s: 'CBOT:UB1!',
-              d: 'Ultra T-Bond'
+              d: 'Ultra T-Bond',
             },
             {
               s: 'EUREX:FGBL1!',
-              d: 'Euro Bund'
+              d: 'Euro Bund',
             },
             {
               s: 'EUREX:FBTP1!',
-              d: 'Euro BTP'
+              d: 'Euro BTP',
             },
             {
               s: 'EUREX:FGBM1!',
-              d: 'Euro BOBL'
-            }
+              d: 'Euro BOBL',
+            },
           ],
-          originalTitle: 'Bonds'
+          originalTitle: 'Bonds',
         },
         {
           title: 'Forex',
           symbols: [
             {
-              s: 'FX:EURUSD'
+              s: 'FX:EURUSD',
             },
             {
-              s: 'FX:GBPUSD'
+              s: 'FX:GBPUSD',
             },
             {
-              s: 'FX:USDJPY'
+              s: 'FX:USDJPY',
             },
             {
-              s: 'FX:USDCHF'
+              s: 'FX:USDCHF',
             },
             {
-              s: 'FX:AUDUSD'
+              s: 'FX:AUDUSD',
             },
             {
-              s: 'FX:USDCAD'
-            }
+              s: 'FX:USDCAD',
+            },
           ],
-          originalTitle: 'Forex'
-        }
-      ]
-  };
-    const script1 = document.createElement( 'script' );
-    script1.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
+          originalTitle: 'Forex',
+        },
+      ],
+    };
+    const script1 = document.createElement('script');
+    script1.src =
+      'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
     script1.async = true;
     script1.id = this.widgetId;
-    script1.innerHTML = JSON.stringify( this.settings1 );
-    this.containerDiv1.nativeElement.appendChild( script1 );
-    const brandingDiv1 = document.createElement( 'div' );
+    script1.innerHTML = JSON.stringify(this.settings1);
+    this.containerDiv1.nativeElement.appendChild(script1);
+    const brandingDiv1 = document.createElement('div');
     brandingDiv1.innerHTML = `
     <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">
     Financial Markets</span></a> by TradingView</div>
   `;
-
   }
 }

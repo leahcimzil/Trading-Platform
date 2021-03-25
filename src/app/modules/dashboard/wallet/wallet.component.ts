@@ -10,7 +10,7 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 export class WalletComponent implements OnInit {
 
   data;
- account_verified: boolean = true;
+ account_verified = 'Pending';
  firstPayment = true;
   constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService) { }
 
@@ -32,7 +32,7 @@ export class WalletComponent implements OnInit {
       (data: any[]) => {
      this.data = data;
      if(this.data) {
-    this.account_verified = data['0'].owner.is_account_verified;
+      this.account_verified = data['0'].owner.user_status;
     this.firstPayment = data['0'].owner.is_first_payment;
      }
         }

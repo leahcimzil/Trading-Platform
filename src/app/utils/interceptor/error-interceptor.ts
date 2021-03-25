@@ -19,7 +19,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status !== 401) {
-          this.notify.notError(error.error['0']);
+          this.notify.notError(error.error);
 
 
         }

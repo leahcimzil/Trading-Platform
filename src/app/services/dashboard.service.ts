@@ -95,6 +95,10 @@ uploadDoc(data: any) {
   return this.http.get<any>(`${this.API_URL}/auth/user_details/${id}/`);
 }
 
+getInvoices(): any {
+  return this.http.get<any>(`${this.API_URL}/core/invoices/`);
+}
+
 
 
 

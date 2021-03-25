@@ -52,6 +52,7 @@ import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the
 import { MomentModule } from 'angular2-moment'; // optional, provides moment-style pipes for date formatting
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { Mt4Component } from './pages/mt4/mt4.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     TradingHoursChangesComponent,
     FooterComponent,
     PrivacyPolicyComponent,
-    TermsConditionsComponent
+    TermsConditionsComponent,
+    Mt4Component
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccessPaymentComponent } from './shared/access-payment/access-payment.component';
 import {HomeComponent} from './pages/home/home.component';
 import { TradeComponent } from './pages/trade/trade.component';
+import { Mt4Component } from './pages/mt4/mt4.component';
 import { AboutUsComponent } from './pages/company/about-us/about-us.component';
 import { AccountTypesComponent } from './pages/company/account-types/account-types.component';
 import { ContactUsComponent } from './pages/company/contact-us/contact-us.component';
@@ -48,6 +49,13 @@ const routes: Routes = [
   },
 
   // ****************** trade page *****************************************
+
+  // ****************** mt4 page *****************************
+  {
+    path: 'mt4',
+    component: Mt4Component
+  },
+  // **************** mt4 page ******************************
 
    // ****************** company page *****************************************
    {
