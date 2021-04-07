@@ -77,12 +77,14 @@ export class AppComponent implements OnInit {
    if (userLoggedIn) {
      idle.watch()
      this.timedOut = false;
+     this.reset();
    } else {
      idle.stop();
+     this.timedOut = true;
    }
  })
 
- this.reset();
+
   }
 
 
