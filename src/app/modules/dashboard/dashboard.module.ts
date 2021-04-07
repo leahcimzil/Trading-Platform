@@ -7,7 +7,7 @@ import { TransactionHistoryComponent } from '../dashboard/transaction-history/tr
 import { AccountComponent } from '../dashboard/account/account.component';
 import { PersonalInfoComponent } from '../dashboard/account/personal-info/personal-info.component';
 import { UploadsComponent } from '../dashboard/account/uploads/uploads.component';
-import { SettingsComponent } from '../dashboard/account/settings/settings.component';
+import { SettingsComponent } from '../dashboard/account/set/settings.component';
 import { AnalysisComponent } from '../dashboard/analysis/analysis.component';
 import { DepositComponent } from '../dashboard/deposit/deposit.component';
 import { WithdrawComponent } from '../dashboard/withdraw/withdraw.component';
@@ -26,6 +26,7 @@ import { PnotifyService } from 'src/app/services/pnotify.service';
 import { WalletComponent } from './wallet/wallet.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDetailsComponent } from '../dashboard/admin/admin-details/admin-details.component';
+import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 export const dashboardRoutes: Routes = [
   {
     path: '',
@@ -97,7 +98,8 @@ export const dashboardRoutes: Routes = [
     NgxIntlTelInputModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BsDatepickerModule.forRoot(),
   ],
   declarations: [
     DashboardComponent,
@@ -117,7 +119,7 @@ export const dashboardRoutes: Routes = [
     AdminDetailsComponent
     
   ],
-  exports: [RouterModule],
+  exports: [RouterModule,  ],
   providers: [
     AuthGuard,
     PnotifyService,

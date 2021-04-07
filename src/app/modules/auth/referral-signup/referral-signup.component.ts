@@ -13,13 +13,14 @@ import {
 import { SignupDTO } from '../../../models/auth-model';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ActivatedRoute } from '@angular/router';
 declare var $: any;
 @Component({
-  selector: 'app-auth-signup',
-  templateUrl: './auth-signup.component.html',
-  styleUrls: ['./auth-signup.component.css'],
+  selector: 'app-referral-signup',
+  templateUrl: './referral-signup.component.html',
+  styleUrls: ['./referral-signup.component.css']
 })
-export class AuthSignupComponent implements OnInit, AfterViewInit {
+export class ReferralSignupComponent implements OnInit, AfterViewInit {
   signupForm: FormGroup;
 
   country: any;
@@ -34,10 +35,12 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
     CountryISO.UnitedStates,
     CountryISO.UnitedKingdom,
   ];
+  id: any;
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.signupForm = this.fb.group(
       {
@@ -109,6 +112,10 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.id = this.activatedRoute.snapshot.params.id;
+    this.signupForm.patchValue({
+      referal_code: this.id
+    })
     this.auth.getCountry().subscribe((data) => {
       this.country = data;
     });
@@ -125,4 +132,5 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
       }
     });
   }
+
 }

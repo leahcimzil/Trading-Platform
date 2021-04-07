@@ -12,6 +12,7 @@ export class WalletComponent implements OnInit {
   data;
  account_verified = 'Pending';
  firstPayment = true;
+ balance: any;
   constructor(private dashboard: DashboardService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
@@ -19,10 +20,11 @@ export class WalletComponent implements OnInit {
     this.dashboard.ReloadNeeded.subscribe(
       () => {
            this.getAccount();
-        
+           this.getWallet()
       }
     );
     this.getAccount();
+    this.getWallet()
   }
 
 
@@ -41,5 +43,21 @@ export class WalletComponent implements OnInit {
  
     )
     this.spinner.hide();}
+
+
+    private getWallet() {
+      this.dashboard.getBalance().subscribe(
+        (data: any[]) => {
+       this.data = data;
+       if(this.data) {
+        this.balance = data['0'].balance;
+  
+       }
+          }
+  
+        
+   
+      )
+      this.spinner.hide();}
 
 }

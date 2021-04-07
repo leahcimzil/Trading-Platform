@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
+import { ReferralSignupComponent } from './referral-signup/referral-signup.component';
 import { RouterModule, Routes } from '@angular/router';
 import { EmailVerificationComponent } from './email-verification/email-verification.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
@@ -15,7 +17,7 @@ import { Interceptor } from 'src/app/utils/interceptor/auth-interceptor';
 import { ErrorInterceptor } from 'src/app/utils/interceptor/error-interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PnotifyService } from 'src/app/services/pnotify.service';
-
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const authRoutes: Routes = [
   // *****************  auth home which includes the auth login *******************************
@@ -42,6 +44,11 @@ const authRoutes: Routes = [
     component: AuthSignupComponent
    },
 
+   {
+    path: 'refer-signup/:id',
+    component: ReferralSignupComponent
+   },
+
  // *****************  auth login routes *********************************************
 
   // *****************  email verification routes ********************************************
@@ -51,11 +58,20 @@ const authRoutes: Routes = [
   //   component: EmailVerificationComponent
   //  }
 
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent
+   },
+
+   {
+    path: 'change-password/:id',
+    component: ChangePasswordComponent
+   },
  // *****************   email verification routes *********************************************
 ];
 
 @NgModule({
-  declarations: [AuthComponent, AuthLoginComponent, AuthSignupComponent, EmailVerificationComponent],
+  declarations: [AuthComponent,ChangePasswordComponent, ReferralSignupComponent, AuthLoginComponent,ResetPasswordComponent, AuthSignupComponent, EmailVerificationComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(authRoutes),

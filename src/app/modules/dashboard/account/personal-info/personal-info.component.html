@@ -1,5 +1,5 @@
-<ngx-spinner bdColor="rgba(51,51,51,0.8)" [fullScreen]="false" type="ball-spin-clockwise" size="small">
-</ngx-spinner>
+
+
 <div class="mt-3">
   <form class="mx-3" [formGroup]="form" (ngSubmit)="submitForm()">
     <div class="form-group row my-4 ">
@@ -43,8 +43,21 @@
     <div class="form-group row my-4">
       <div class="form-group col-md-6" >
         <label for="dateOfBirth" class="my-2">Date of Birth</label>
-        <input type="date" class="form-control form-control-lg"
-        id="dateOfBirth"  formControlName="date_of_birth">
+        <!-- <input type="date" class="form-control form-control-lg"
+        id="dateOfBirth" [max]="2002-12-31"
+       formControlName="date_of_birth"> -->
+       <input 
+       placeholder="DD/MM/YYYY"
+       class="form-control form-control-lg"
+       formControlName="date_of_birth"
+       id="dateOfBirth"
+       bsDatepicker
+       [maxDate]="maxDate"
+       [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD',containerClass: 'theme-dark-blue',  displayOneMonthRange: true }">
+       
+          <div class="text-danger" *ngIf = "form.get('date_of_birth').invalid &&  (form.get('date_of_birth').touched || form.get('date_of_birth').dirty) ">
+            <small *ngIf = "form.get('date_of_birth').errors?.required"> 18 years of age required</small>
+          </div>
     </div>
 
     <div class="form-group col-md-6">
@@ -100,7 +113,8 @@
       </div>
     </div>
     <div class="button d-flex justify-content-end mt-5">
-<button class="btn py-3" type="submit">Next</button>
+<button class="btn py-3" type="submit" *ngIf="this.uploads.length === 0">Next</button>
+<button class="btn py-3" type="submit" *ngIf="this.uploads.length > 0">Update</button>
     </div>
       </form>
 

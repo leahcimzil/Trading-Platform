@@ -20,8 +20,6 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         if (error.status !== 401) {
           this.notify.notError(error.error);
-
-
         }
         this.spinner.hide();
         return throwError(error);

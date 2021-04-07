@@ -50,7 +50,7 @@ export class UploadsComponent implements OnInit {
 
   uploads = [];
 
-
+  account_verified = 'Pending';
   userName = localStorage.getItem('userDetails')
   constructor(private sanitizer: DomSanitizer, private fb: FormBuilder,
     private notify: PnotifyService,
@@ -65,12 +65,14 @@ export class UploadsComponent implements OnInit {
   this.spinner.show();
     this.dashboard.ReloadNeeded.subscribe(
       () => {
-        this.getUpload()
+        this.getUpload();
+        this.getAccount();
         
       }
     );
 
-    this.getUpload()
+    this.getUpload();
+    this.getAccount();
   }
 
   public changePicture1(event) {
@@ -146,6 +148,15 @@ export class UploadsComponent implements OnInit {
       
  
     )}
+
+    private getAccount() {
+      this.dashboard.getAccount().subscribe((data: any[]) => {
+        if (data) {
+          this.account_verified = data['0'].owner.user_status;
+        }
+      });
+      this.spinner.hide();
+    }
 
 
   onDrop() {

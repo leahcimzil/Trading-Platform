@@ -100,6 +100,19 @@ getInvoices(): any {
 }
 
 
+getBalance(): any {
+  return this.http.get<any>(`${this.API_URL}/core/wallet_balance/`);
+}
+
+getReferal(): any {
+  return this.http.get<any>(`${this.API_URL}/auth/referal_code/`);
+}
+
+getReferalH(): any {
+  return this.http.get<any>(`${this.API_URL}/auth/referal_history/`);
+}
+
+
 
 
 

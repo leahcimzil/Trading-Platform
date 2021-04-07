@@ -53,7 +53,7 @@ import { MomentModule } from 'angular2-moment'; // optional, provides moment-sty
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { Mt4Component } from './pages/mt4/mt4.component';
-
+import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +93,9 @@ import { Mt4Component } from './pages/mt4/mt4.component';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    // MatDatepickerModule,
+    // MatNativeDateModule,
+    // MatInputModule
     NgxIntlTelInputModule,
     HttpClientModule,
     NgxSpinnerModule,
@@ -101,6 +104,9 @@ import { Mt4Component } from './pages/mt4/mt4.component';
     NgIdleKeepaliveModule.forRoot(),
     MomentModule,
     ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    // DatepickerModule.forRoot()
+   
   ],
   providers: [AuthGuard, PnotifyService, VerifyGuard, UnAuthGuard, DashboardService,
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },

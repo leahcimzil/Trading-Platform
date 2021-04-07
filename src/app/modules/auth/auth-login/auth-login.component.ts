@@ -36,6 +36,7 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
       password
     };
    this.auth.loginUser(data);
+   this.loginForm.reset();
   }
 
   ngOnInit(): void {

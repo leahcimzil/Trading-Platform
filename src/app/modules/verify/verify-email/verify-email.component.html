@@ -4,12 +4,12 @@
 <div class="container">
   <div class="page-body mx-5 ">
       <div class="page-body-image d-flex justify-content-center ">
-           <img src="/assets/images/verify-image.svg" height="350px" width="350px" alt="image"  />
+           <img src="/assets/images/verify-image.svg" height="250px" width="250px" alt="image"  />
       </div>
       <div class="verify-email mt-5 d-flex justify-content-center ">
-          <h2>Verify Your Email</h2>   
+          <h4>Verify Your Email</h4>   
       </div>
-      <div class="verify-email d-flex justify-content-center ">
+      <div class="verify-email d-flex justify-content-center mt-3">
       <h6> Check your email address for 4 secret numbers that help us verify your email account</h6>
   </div>
   <form [formGroup]="verifyForm" (ngSubmit)="submitVerify()">
@@ -29,7 +29,7 @@
   </div>
 </form>
   <div class="verify-email d-flex justify-content-center ">
-      <a>Resend Email</a>
+      <a (click)="send()">Resend Email</a>
   </div>
   </div>
 </div>

@@ -40,6 +40,13 @@ export class VerifyEmailComponent implements OnInit, AfterViewInit {
     this.auth.verifyUser(data);
   }
 
+  send() {
+    const data: any = {
+      email: localStorage.getItem('email')
+    }
+    this.auth.resendOTP(data);
+  }
+
 
   ngAfterViewInit(): void {
     $(function() {

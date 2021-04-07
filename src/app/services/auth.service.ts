@@ -179,17 +179,21 @@ export class AuthService {
   }
 
   resetPassword = (data: any) => {
-    this.http.post(`${this.API_URL}/auth/reset_password/`, data).subscribe(
-      res => {
-
-      }
-    );
+   return this.http.post(`${this.API_URL}/auth/request_password_reset/`, data)
   }
 
-  resendOTP = () => {
-    this.http.post(`${this.API_URL}/auth/resend_otp/`, {}).subscribe(
-      res => {
+  changePassword = (id: string, data: any) => {
+    return this.http.post(`${this.API_URL}/auth/reset_password/${id}/`, data)
+   }
 
+   changePass = (data: any) => {
+    return this.http.post(`${this.API_URL}/auth/reset_password_dashboard/`, data)
+   }
+  
+  resendOTP = (data) => {
+     this.http.post(`${this.API_URL}/auth/resend_verification_mail/`, data).subscribe(
+      res => {
+        this.notify. notifyResendOTP();
       }
     );
   }
