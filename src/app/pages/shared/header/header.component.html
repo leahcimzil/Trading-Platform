@@ -23,7 +23,7 @@
               <a class="nav-link pr-3 mx-2" routerLink="/trade">Trade <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link pr-3 mx-2 cursor" routerLinkActive="link" >Company</a>
+              <a class="nav-link pr-3 mx-2 cursor" routerLink="/company/about-us" routerLinkActive="link" >Company</a>
               <ul class="dropdown-menu fade-up ">
                 <li><a class="dropdown-item py-2" routerLink="/company/about-us">About Us</a></li>
                 <li><a class="dropdown-item py-2" routerLink="/company/account-types"> Account Types </a></li>
@@ -33,7 +33,7 @@
           </li>
   
             <li class="nav-item dropdown">
-              <a class="nav-link pr-3 mx-2 cursor" >Markets</a>
+              <a class="nav-link pr-3 mx-2 cursor" routerLink="/market/currency-pairs">Markets</a>
               <ul class="dropdown-menu fade-up">
                 <li><a class="dropdown-item py-2" routerLink="/market/currency-pairs"> Currency Pairs</a></li>
                 <li><a class="dropdown-item py-2" routerLink="/market/stocks"> Stocks</a></li>
@@ -44,7 +44,7 @@
           </li>
   
             <li class="nav-item dropdown">
-              <a class="nav-link pr-3 mx-2 cursor" >Education</a>
+              <a class="nav-link pr-3 mx-2 cursor" routerLink="/education/trading-steps" >Education</a>
               <ul class="dropdown-menu fade-up">
                 <li><a class="dropdown-item py-2" routerLink="/education/trading-steps"> Trading Steps</a></li>
                 <li><a class="dropdown-item py-2" routerLink="/education/what-is-forex"> Whats is Forex</a></li>
@@ -54,7 +54,7 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link pr-3 mx-2 cursor" >Analytical</a>
+              <a class="nav-link pr-3 mx-2 cursor" routerLink="/analytical/real-time-chart">Analytical</a>
               <ul class="dropdown-menu fade-up">
                 <li><a class="dropdown-item py-2" routerLink="/analytical/real-time-chart"> Real Time Chart</a></li>
                 <li><a class="dropdown-item py-2" routerLink="/analytical/economic-calender"> Economic Calender </a></li>
@@ -86,7 +86,7 @@
               <a class="nav-link pr-4 login-btn btn py-2" routerLink="/auth/auth-login">Log In</a>
             </li>
             <li class="nav-item" *ngIf="!userAuthenticated">
-              <a class="nav-link px-4 mr-2 signin-btn btn py-2" routerLink="/auth/auth-signup">Sign Up</a>
+              <a class="nav-link px-4 mr-2 signin-btn btn py-2 my-2" routerLink="/auth/auth-signup">Sign Up</a>
             </li>
             <li class="nav-item" *ngIf="userAuthenticated">
               <a class="nav-link" routerLink="/dashboard/trade">{{name}}</a>

@@ -1,6 +1,24 @@
 /* .logo a {
   font-size: 20px;
 } */
+.wrapper {
+    background: #E5E5E5;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar.navbar-3 .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger1.svg?color=E5E5E5');
+}
+.navbar-light .navbar-toggler {
+    color: white;
+    font-size: 26px;
+}
+.navbar-light .navbar-toggler:focus {
+    outline-color: #4E3995;
+    background: white;
+    border: 1px solid;
+}
+
+
 .nav-item a, .navbar-brand{
     color: #ffffff !important;
     font-size: 17px;

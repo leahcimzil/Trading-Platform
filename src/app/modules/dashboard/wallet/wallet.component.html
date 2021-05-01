@@ -5,13 +5,9 @@
     </div>
 
     <div class="col-lg-12 mt-5">
-        <div class="mx-5 d-flex justify-content-between">
-            <h3 >Wallet Balance</h3>
-            <div class="mr-2">
-                <button *ngIf="firstPayment" class="btn btn-danger" routerLink="/dashboard/payment">Deposit</button>
-                <button *ngIf="!firstPayment" class="btn btn-danger" routerLink="/dashboard/deposit">Deposit</button>&nbsp;
-                <button class="btn btn-danger" routerLink="/dashboard/withdraw">Withdraw</button>
-            </div>
+        <div class="mx-5 d-flex justify-content-center">
+            <h3 class="text-center">Wallet Balance</h3>
+            
         </div>
         
         <div class="card h-100 mx-5">
@@ -19,6 +15,11 @@
       <p class="text-center mt-5 mb-5">${{(balance ? balance : 0) | number}}</p>
             </div>
 
+        </div>
+        <div class="mx-5 d-flex justify-content-center mt-3">
+            <button *ngIf="firstPayment" class="btn btn-danger" routerLink="/dashboard/payment">Deposit</button>
+            <button *ngIf="!firstPayment" class="btn btn-danger" routerLink="/dashboard/deposit">Deposit</button>&nbsp;
+            <button class="btn btn-danger" routerLink="/dashboard/withdraw">Withdraw</button>
         </div>
 
     </div>
