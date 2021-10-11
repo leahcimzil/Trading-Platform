@@ -56,6 +56,14 @@ uploadDoc(data: any) {
    );
  }
 
+ postBlog(data: any) {
+  return this.http.post<any>(`${this.API_URL}/core/blog_post/`, data).pipe(
+     tap( () => {this.getReloadNeeded.next(); }
+
+     )
+   );
+ }
+
  getQrCode(): Observable<any> {
   return this.http.get<any>(`https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&color=1&prefix=on&address=1M5m1DuGw4Wyq1Nf8sfoKRM6uA4oREzpCX`);
 }
@@ -69,6 +77,10 @@ uploadDoc(data: any) {
  getUser() {
    return this.http.get<any>(`${this.API_URL}/auth/users/`);
  }
+
+ getInvoice() {
+  return this.http.get<any>(`${this.API_URL}/core/invoices/`);
+}
 
  getUserSummary() {
   return this.http.get<any>(`${this.API_URL}/auth/users_summary/`);
@@ -110,6 +122,11 @@ getReferal(): any {
 
 getReferalH(): any {
   return this.http.get<any>(`${this.API_URL}/auth/referal_history/`);
+}
+
+
+getPost(): any {
+  return this.http.get<any>(`${this.API_URL}/core/blog_post/`);
 }
 
 

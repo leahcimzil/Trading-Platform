@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { DashboardService } from 'src/app/services/dashboard.service';
-
+import { PnotifyService } from 'src/app/services/pnotify.service';
 @Component({
   selector: 'app-withdraw',
   templateUrl: './withdraw.component.html',
@@ -9,7 +10,14 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 export class WithdrawComponent implements OnInit {
   data;
   account_verified = 'Pending';
-   constructor(private dashboard: DashboardService) { }
+  withdrawForm: FormGroup
+   constructor(private dashboard: DashboardService,
+     private fb: FormBuilder,   private notify: PnotifyService) { 
+     this.withdrawForm =this.fb.group({
+       amount: [''],
+       wallet_address: ['']
+     })
+   }
  
    ngOnInit() {
  
@@ -20,6 +28,18 @@ export class WithdrawComponent implements OnInit {
        }
      );
      this.getAccount();
+   }
+
+   withdraw() {
+     const {
+       amount, wallet_address
+     } = this.withdrawForm.getRawValue();
+     const data: any = {
+       amount, wallet_address
+     }
+    //  console.log(data);
+     this.notify.notifyWI();
+     this.withdrawForm.reset();
    }
  
  

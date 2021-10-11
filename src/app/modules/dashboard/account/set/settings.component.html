@@ -11,14 +11,14 @@
           <div class="card-body">
             <div class="text-center mb-4">
               <!-- <h4>Change Password</h4> -->
-              <p>Enter your password to change your password.</p>
+              <p>Enter your new password</p>
             </div>
             <form [formGroup]="resetForm" (ngSubmit)="send()">
               <div class="form-group my-4" id="pass">
                 <label for="password" class="my-2">password</label>
                 <input type="password" class="form-control form-control-lg" id="password"
                        [class.border-danger]="resetForm.get('password').invalid && (resetForm.get('password').touched || resetForm.get('password').dirty)"
-                       formControlName="password">
+                       formControlName="password" placeholder="password">
                 <!-- <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
                 <div class="text-danger" *ngIf = "resetForm.get('password').invalid && (resetForm.get('password').touched || resetForm.get('password').dirty)">
                   <small *ngIf = "resetForm.get('password').errors?.required"> Password required</small>
@@ -33,7 +33,7 @@
                 <input type="password" class="form-control form-control-lg"
                        [class.border-danger]="resetForm.get('confirmPassword').invalid && resetForm.get('confirmPassword').touched || resetForm.errors?.misMatch"
                        id="confirmPassword"
-                        formControlName="confirmPassword">
+                        formControlName="confirmPassword"placeholder="confirm password">
                 <!-- <span toggle="#confirmPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
                 <div class="text-danger" *ngIf = "resetForm.get('confirmPassword').invalid &&  (resetForm.get('confirmPassword').touched || resetForm.get('confirmPassword').dirty) || resetForm.errors?.misMatch">
                   <small *ngIf = "resetForm.get('confirmPassword').errors?.required"> Password required</small>

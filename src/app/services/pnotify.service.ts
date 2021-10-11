@@ -82,7 +82,7 @@ export class PnotifyService {
     this.pnotify.success({
       // title: 'Wallet Deposited',
       stack: stackTopModal,
-      text: 'Withdraw in progress',
+      text: 'Withdraw requested',
       width: '270px',
       cornerclass: 'ui-pnotify-sharp',
       styling: 'bootstrap4',
@@ -106,6 +106,28 @@ export class PnotifyService {
       // title: 'Wallet Deposited',
       stack: stackTopModal,
       text: 'File Upload Successfully',
+      cornerclass: 'ui-pnotify-sharp',
+      styling: 'bootstrap4',
+      icons: 'fontawesome4',
+      // type: `${type}`
+    });
+  }
+
+  notifySucces = (): any => {
+    const stackTopModal = {
+      dir1: 'down', // With a dir1 of "up", the stacks will start appearing at the bottom.
+      // Without a `dir2`, this stack will be horizontally centered, since the `dir1` axis is vertical.
+      firstpos1: 25, // The notices will appear 25 pixels from the bottom of the context.
+      // Without a `spacing1`, this stack's notices will be placed 25 pixels apart.
+      push: 'top', // Each new notice will appear at the bottom of the screen,
+      modal: false, // When a notice appears in this stack, a modal overlay will be created.
+      overlayClose: false, // When the user clicks on the overlay, all notices in this stack will be closed.
+    };
+    this.pnotify = this.getPNotify();
+    this.pnotify.success({
+      // title: 'Wallet Deposited',
+      stack: stackTopModal,
+      text: 'Post Upload Successfully',
       cornerclass: 'ui-pnotify-sharp',
       styling: 'bootstrap4',
       icons: 'fontawesome4',

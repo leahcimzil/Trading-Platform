@@ -17,8 +17,8 @@
 
         </div>
         <div class="mx-5 d-flex justify-content-center mt-3">
-            <button *ngIf="firstPayment" class="btn btn-danger" routerLink="/dashboard/payment">Deposit</button>
-            <button *ngIf="!firstPayment" class="btn btn-danger" routerLink="/dashboard/deposit">Deposit</button>&nbsp;
+            <button *ngIf="balance <= 0" class="btn btn-danger" routerLink="/dashboard/payment">Deposit</button>
+            <button *ngIf="balance > 0" class="btn btn-danger" routerLink="/dashboard/deposit">Deposit</button>&nbsp;
             <button class="btn btn-danger" routerLink="/dashboard/withdraw">Withdraw</button>
         </div>
 

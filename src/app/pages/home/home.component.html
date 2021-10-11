@@ -167,7 +167,80 @@ Over 400 Trading Assets
          <div class="fifth-row-header d-flex justify-content-center">
              <h2>Account Types</h2>
          </div>
-         <div class="page-body mt-5">
+         <p-carousel class="d" [value]="plans" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+          <!-- <ng-template pTemplate="header">
+              <h5>Circular, AutoPlay, 3 Items per Page and Scroll by 1</h5>
+          </ng-template> -->
+          <ng-template let-plan pTemplate="item">
+              <!-- <div class="product-item">
+                  <div class="product-item-content">
+                      <div class="p-mb-3">
+                      </div>
+                      <div>
+                        <img [src]="product.name" class="m-0" width="220px" height="150px" alt="image"/>
+                      
+                      </div>
+                  </div>
+              </div> -->
+
+              <div class="page-body mt-5">
+                <div class="b col-3 px-2">
+                    <div class="card shadow bg-white rounded-2 border-0">
+                        <div class="card-body">
+                            <div class="header">
+                        <h6 class="text-center">{{plan.name}}</h6>
+                        <h3 class="text-center">{{plan.price}}</h3>
+                    </div>
+                        <hr class="mx-5">
+                        <div class=" a d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >24/6 Support</p>
+                        </div>
+                        <div class=" a d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Education center</p>
+                        </div>
+                        <div class=" a d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Daily market review</p>
+                        </div>
+                        <div class="a d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >PRO webinars</p>
+                        </div>
+                        <div class="a d-flex justify-content-between">
+                            <i style="color: #4375FF; font-size: 12px;" class="fa fa-check mt-1 mr-0" aria-hidden="true"></i>&nbsp;
+                            <p >Price Alerts</p>
+                        </div>
+                        <div class="a d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color: #E9E9E9;">Executive Account Managers</p>
+                        </div>
+                        <div class="a d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color: #E9E9E9;">Trading Signals Up to X</p>
+                        </div>
+                        <div class="a d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color:#E9E9E9;">Personalised Trading Strategy</p>
+                        </div>
+                        <div class="a d-flex justify-content-between">
+                            <i style="color: #E9E9E9; font-size: 12px;" class="fa fa-times mt-1" aria-hidden="true"></i>&nbsp;
+                            <p style="color:#E9E9E9;">Exclusive Position Access</p>
+                        </div>
+      
+                        <div class="invest d-flex justify-content-center mt-4">
+                            <button class="btn py-2" routerLink="/auth/auth-login">Invest</button>
+                        </div>
+      
+                        </div>
+                      </div>
+                </div>
+                </div>
+          </ng-template>
+          
+      </p-carousel>
+         <div class="page-body-1 mt-5">
           <div class="b col-3 px-2">
               <div class="card shadow bg-white rounded-2 border-0">
                   <div class="card-body">
@@ -489,23 +562,24 @@ Over 400 Trading Assets
                </p>
              </div>
              <div class="eight-row-body d-flex justify-content-around mt-5">
-               <div class="card">
-                 <div class="card-header p-0 "><img src="/assets/images/first-trading.jpeg" class="inside-image" width="248px" height="200px" alt="image"/></div>
+               <div class="card" *ngFor ="let a of data| slice:0:4 ">
+                 <div class="card-header p-0 "><img [src]="a.image ? a.image :'/assets/images/first-trading.jpeg'" class="inside-image" width="248px" height="200px" alt="image"/></div>
                  <div class="eight-row-body-word">
-                  <p class="text-center mt-3">Aliso Canyon leak prompts feds to recommend dozens of safety changes</p>
+                  <p class="text-center mt-3">{{a.title}}</p>
                  </div>
 
-                 <div class="card-footer d-flex justify-content-between">
-                  <div><i class="fa fa-clock-o" style="color: grey; font-size: 20px; " aria-hidden="true"></i>&nbsp;<span style="font-size: 12px; color: grey; ">21 jan 2020</span></div>
+                 <div class="card-footer d-flex justify-content-center">
+                   <a class="ab" href="{{a.link}}" target="_blank">Read More</a>
+                  <!-- <div><i class="fa fa-clock-o" style="color: grey; font-size: 20px; " aria-hidden="true"></i>&nbsp;<span style="font-size: 12px; color: grey; ">21 jan 2020</span></div>
                   <div class="d-flex justify-content-between">
                     <div class="mr-2  ico" ><i style="color: grey; font-size: 18px;" class="fa fa-heart-o mr-0" aria-hidden="true"></i>&nbsp;<span style="font-size: 12px; color: grey; ">150</span></div>&nbsp;&nbsp;
                     <div class="  ico"><i class="fa fa-comment-o" style="color: grey; font-size: 19px; " aria-hidden="true"></i>&nbsp;<span style="font-size: 12px; color: grey; ">150</span></div>
-                  </div>
+                  </div> -->
                 </div>
 
                </div>
-               <div>
-                <div class="card">
+            
+                <!-- <div class="card">
                   <div class="card-header p-0 "><img src="/assets/images/first-trading.jpeg" class="" width="248px" height="200px" alt="image"/></div>
                   <div class="eight-row-body-word">
                    <p class="text-center mt-3">Aliso Canyon leak prompts feds to recommend dozens of safety changes</p>
@@ -519,10 +593,10 @@ Over 400 Trading Assets
                    </div>
                  </div>
  
-                </div>
-              </div>
-              <div>
-                <div class="card">
+                </div> -->
+        
+          
+                <!-- <div class="card">
                   <div class="card-header p-0 "><img src="/assets/images/first-trading.jpeg" class="" width="248px" height="200px" alt="image"/></div>
                   <div class="eight-row-body-word">
                    <p class="text-center mt-3">Aliso Canyon leak prompts feds to recommend dozens of safety changes</p>
@@ -536,8 +610,8 @@ Over 400 Trading Assets
                     </div>
                   </div>
  
-                </div>
-              </div>
+                </div> -->
+<!--         
               <div>
                 <div class="card">
                   <div class="card-header p-0 m-0"><img src="/assets/images/first-trading.jpeg" class="m-0" width="248px" height="200px" alt="image"/></div>
@@ -555,11 +629,11 @@ Over 400 Trading Assets
  
                 </div>
                  
-              </div>
+              </div> -->
 
              </div>
              <div class="eight-row-more d-flex justify-content-center mt-5">
-               <p class="text- center">More News</p>
+               <a class="cursor text-center ab" target="_blank" href="https://blog.beogradcapitalinvestment.com">More News</a>
              </div>
 
            </div>

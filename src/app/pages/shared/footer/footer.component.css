@@ -23,6 +23,18 @@
     background-color: #0D0D21 !important;
     /* height: 290px !important; */
   }
+  .nothing-row {
+    background-color: black !important;
+    color: white;
+    /* height: 290px !important; */
+  }
+
+  .content {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 10px;
+
+  }
   
   .eleven-row-img {
     margin-top: -20px !important;
@@ -32,7 +44,7 @@
     font-size: 14px;
   }
   
-  .eleven-row-body-two button {
+  .eleven-row-body-two a {
     background-color: #312085;
     color: #FFFFFF;
     font-size: 18px;

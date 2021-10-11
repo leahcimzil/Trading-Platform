@@ -33,7 +33,9 @@ color: white;
 //   transition: all .4s ease 0s;
 //   background: #4E3995;
 //   }
-
+.imgr{
+  display: none;
+}
 .sidebar-nav {
   padding: 0;
   margin: 0;
@@ -777,4 +779,21 @@ and (min-width: 1000px) {
     margin-top: 150px !important;
   }
 
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .fixed-nav-bar a {
+font-size: 11px !important;
+}
+
+.imgr{
+  display: block;
+}
+  
+}
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 767px) {
+  .imgr{
+    display: block;
+  }
 }

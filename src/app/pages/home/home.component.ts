@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { DashboardService } from 'src/app/services/dashboard.service';
 
 declare const TradingView: any;
 @Component({
@@ -8,7 +9,7 @@ declare const TradingView: any;
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   // products: any[];
-	
+  data: any[];
 	responsiveOptions;
      // allows for loading with any symbol
      @Input() symbol = '';
@@ -63,7 +64,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
     
      ]
 
-  constructor(private _elRef: ElementRef ) {
+    plans =  [{
+      name: 'Basic',
+      price: '$250'
+    },
+    {
+      name: 'Silver',
+      price: '$1,000'
+    },
+    {
+      name: 'Gold',
+      price: '$5,000'
+    },
+    {
+      name: 'Plantinum',
+      price: '$25,000'
+    }]
+
+  constructor(private _elRef: ElementRef, private dashboard: DashboardService ) {
     this.responsiveOptions = [
       {
           breakpoint: '1024px',
@@ -84,7 +102,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
    }
 
   ngOnInit(): void {
+    this.dashboard.ReloadNeeded.subscribe(
+      () => {
+           this.getAccount();
+           
+        
+      }
+    );
+    this.getAccount();
+
+  
   }
+
+  private getAccount() {
+    this.dashboard.getPost().subscribe(
+      (data: any[]) => {
+     this.data = data;
+    //  this.length = data.length;
+
+        }
+
+      
+ 
+    )
+}
 
 
   ngAfterViewInit(): void

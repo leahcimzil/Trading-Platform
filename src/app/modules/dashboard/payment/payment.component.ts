@@ -62,7 +62,7 @@ export class PaymentComponent implements OnInit {
   pay10() {
     this.spinner.show();
     const data: any = {
-      amount: 10
+      amount: 250
     };
     this.dashboard.postPayment(data).subscribe(
       res => {
@@ -84,7 +84,7 @@ export class PaymentComponent implements OnInit {
   pay20() {
     this.spinner.show();
     const data: any = {
-      amount: 20
+      amount: 1000
     };
     this.dashboard.postPayment(data).subscribe(
       res => {
@@ -101,7 +101,7 @@ export class PaymentComponent implements OnInit {
   pay30() {
     this.spinner.show();
     const data: any = {
-      amount: 30
+      amount: 5000
     };
     this.dashboard.postPayment(data).subscribe(
       res => {
@@ -118,7 +118,7 @@ export class PaymentComponent implements OnInit {
   pay40() {
     this.spinner.show();
     const data: any = {
-      amount: 40
+      amount: 25000
     };
     this.dashboard.postPayment(data).subscribe(
       res => {
