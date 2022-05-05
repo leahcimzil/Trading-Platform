@@ -26,6 +26,7 @@
   .nothing-row {
     background-color: black !important;
     color: white;
+    padding:10px;
     /* height: 290px !important; */
   }
 
