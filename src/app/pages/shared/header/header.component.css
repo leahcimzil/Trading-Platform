@@ -4,24 +4,30 @@
 .wrapper {
     background: #E5E5E5;
     font-family: 'Poppins', sans-serif;
+	z-index: 5000;
 }
 .navbar.navbar-3 .navbar-toggler-icon {
 color: #E5E5E5;
+z-index: 5000;
 }
 .navbar-light .navbar-toggler {
     color: white;
     font-size: 26px;
+	z-index: 5000;
 }
 .navbar-light .navbar-toggler:focus {
     outline-color: #4E3995;
     background: white;
     border: 1px solid;
+	z-index: 5000;
 }
 
 
 .nav-item a, .navbar-brand{
     color: #ffffff !important;
     font-size: 17px;
+	z-index: 5000;
+	
   }
   
   .navbar-toggler {
@@ -50,29 +56,33 @@ color: #E5E5E5;
   }
   /* ============ only desktop view ============ */
 @media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0; }
-	.navbar .nav-item:hover .nav-link{ color: gray !important;  }
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0; z-index: 5000;}
+	.navbar .nav-item:hover .nav-link{ color: gray !important; z-index: 5000; }
 	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
 	.navbar .dropdown-menu.fade-up{ top:180%;  }
 	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg);}
 }		.dropdown-menu {
     background-color: white !important;
+	z-index: 5000;
     
 }
 
 .navbar .nav-item:active .nav-link{
     color:gray !important;  
+	z-index: 5000;
 }
 
 .dropdown-menu a {
     color: black !important;
     border-bottom: 1px solid gray;
     font-size: 14px;
+	z-index: 5000;
 }
 
 .dropdown-menu a:hover {
     background-color: #13136D !important;
     color: white !important;
+	z-index: 5000;
 }
 
 .contact {
@@ -87,6 +97,7 @@ color: #E5E5E5;
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
     background-color: transparent;
+	z-index: 5000;
 }
 
 .navbar-default .navbar-toggle {
@@ -159,7 +170,7 @@ body{
 ================================================== */
 .hero.anime{
 	width: 100% !important;
-	overflow: hidden;
+	/* overflow: hidden; */
     background: linear-gradient(90deg, #0D0D21 0%, #13134A 48.44%, #13136D 100%); 
 }
 .start-header {
@@ -183,7 +194,7 @@ body{
 	transition : all 0.3s ease-out;
 }
 .navigation-wrap{
-	overflow: hidden;
+	/* overflow: auto; */
 	width: 100%;
 	top: 0;
 	left: 0;
